@@ -1,0 +1,28 @@
+<!-- Navigation -->
+<div class="top-bar">
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/#page-top"><img class="navbar-logo" src="/img/logos/lono-logo.png" /> {{ site.title }}</a>
+
+      {% if page.url != '/' %}
+      <form class="search-form form-group has-search" method="get" action="/search" data-search-form>
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" name="q" id="q" placeholder="Search docs" data-search-input />
+      </form>
+      {% endif %}
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+        Menu <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarExample">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="{% link getting-started.md %}">Quick Start</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% link docs.md %}">Docs</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% link support.md %}">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/boltops-tools/lono">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
