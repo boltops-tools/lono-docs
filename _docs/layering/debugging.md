@@ -31,7 +31,7 @@ This will show the **found** layers.
 
 ## All Considered Layers
 
-If you want to also see all the considered layers use `LONO_SHOW_ALL_LAYERS=1`
+If you want to also see all the considered layers use `LONO_SHOW_ALL_LAYERS=1`. Remember, config.logger.level = "debug" needs to also be configured.
 
     $ export LONO_SHOW_ALL_LAYERS=1
     $ lono build demo
