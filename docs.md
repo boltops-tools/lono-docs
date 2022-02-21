@@ -7,3 +7,5 @@ title: Docs
 * [Concepts]({% link _docs/intro/concepts.md %})
 * [Getting Started Tutorials]({% link getting-started.md %})
 * [Lono vs Others]({% link _docs/vs.md %})
+
+{% include old/docs-link.md %}
