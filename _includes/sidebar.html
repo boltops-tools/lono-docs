@@ -189,14 +189,7 @@
             {% endfor %}
           </ul>
       </li>
-      <li><a href="{% link _docs/lookups.md %}">Lookups</a>
-          <ul>
-            {% assign docs = site.docs | where: "categories","lookup" | sort: "order" %}
-            {% for doc in docs -%}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
-            {% endfor %}
-          </ul>
-      </li>
+      <li><a href="{% link _docs/lookups.md %}">Lookups</a></li>
       <li>Extras
           <ul>
             {% assign docs = site.docs | where: "categories","extras" | sort: "order" %}
