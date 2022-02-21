@@ -32,6 +32,6 @@ Lono Method | CloudFormation Section
 [resource]({% link _docs/dsl/basics/resource.md %}) | [Resources](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html)
 [output]({% link _docs/dsl/basics/output.md %}) | [Outputs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html)
 
-One thing that may stand out is the `Conditional` option. This is a CloudFormation pattern that is common enough that lono has encapsulated it: [Conditional Parameter](). In short, it just uses `AWS::NoValue` as the value when the parameter is a blank string, `BucketName` in this case.
+One thing that may stand out is the `Conditional` option. This is a CloudFormation pattern that is common enough that lono has encapsulated it: [Conditional Parameter]({% link _docs/dsl/advanced/conditional-parameter.md %}). In short, it just uses `AWS::NoValue` as the value when the parameter is a blank string, `BucketName` in this case.
 
 Next, we'll build the CloudFormation template.

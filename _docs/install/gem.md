@@ -22,7 +22,7 @@ Gemfile
 
 ```ruby
 source "https://rubygems.org"
-gem "lono", '~> 0.8.0' # <= UPDATE THIS LINE
+gem "lono", '~> 8.0.0' # <= UPDATE THIS LINE
 ```
 
 Then run:

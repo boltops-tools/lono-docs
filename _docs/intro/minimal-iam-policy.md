@@ -18,7 +18,7 @@ However, it really depends on what your CloudFormation templates provision. If y
 
 It is recommended that you create an IAM group and associate it with the IAM users that need access to use [lono up](/reference/lono-cfn-deploy/).  Here are starter instructions and a policy that you can tailor for your needs:
 
-### Commands Summary
+## IAM Commands: All Bucket Permissions
 
 Here's a summary of the commands:
 
@@ -31,7 +31,6 @@ Here's a summary of the commands:
                 "Effect": "Allow",
                 "Action": [
                     "cloudformation:*",
-                    "ec2:*",
                     "s3:*"
                  ],
                 "Resource": [
@@ -48,6 +47,43 @@ Finally, create a user and add the user to IAM group. Here's an example:
     aws iam create-user --user-name tung
     aws iam add-user-to-group --user-name tung --group-name Lono
 
-Note, in the example, we're also adding permission for EC2. This demo policy should be enough to launch an EC2 instance in the blueprint that `lono new blueprint demo` generates.
+## IAM Commands: Limited Bucket Permissions
 
+If you wish to have a more limited s3 policy, here's one way to restrict it.
 
+Create AWs AM
+
+    aws iam create-group --group-name Lono
+    cat << 'EOF' > /tmp/lono-iam-policy.json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "sid0",
+                "Effect": "Allow",
+                "Action": "s3:*",
+                "Resource": [
+                    "arn:aws:s3:::lono-bucket-*",
+                    "arn:aws:s3:::-*bucket-*"
+                ]
+            },
+            {
+                "Sid": "sid1",
+                "Effect": "Allow",
+                "Action": [
+                    "cloudformation:*",
+                 ],
+                "Resource": [
+                    "*"
+                ]
+            }
+        ]
+    }
+    EOF
+    aws iam put-group-policy --group-name Lono --policy-name LonoPolicy --policy-document file:///tmp/lono-iam-policy.json
+
+Add user to group
+
+    aws iam add-user-to-group --group-name Lono --user-name tung
+
+Note, the policy allows `*-bucket-*` and is somewhat redundant to allow the Getting Started Guide to work.
