@@ -20,7 +20,7 @@ output("BucketName", ref("Bucket"))
 
 As you can see there's a `AccessControl` parameter. One way to update the infrastructure is to directly change the parameter in the `template.rb` file. However, it is better to use a parameters file and pass it to the CloudFormation call. Using parameters allow us create different environments with the same code.
 
-To pass parameter values, you simply have to define `config/blueprints/demo/params` files. Lono automaticallys uses them according the `LONO_ENV` value. The default value is `LONO_ENV=dev`.
+To pass parameter values, you simply have to define `config/blueprints/demo/params` files. Lono automatically uses them according the `LONO_ENV` value. The default value is `LONO_ENV=dev`.
 
 ## Generate Starter Params Files
 
