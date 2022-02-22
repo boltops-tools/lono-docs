@@ -9,9 +9,9 @@ Let's build the blueprint.
 The `lono build` command builds the blueprint and compiles down the template to the `output` folder.
 
     $ lono build demo
-    Building CloudFormation template for blueprint demo:
+    Building template
         output/demo/template.yml
-    Building parameters for blueprint demo:
+    Building parameters
         output/demo/params.json
     $
 
