@@ -5,12 +5,11 @@ category: config
 order: 7
 ---
 
-The default stack name will include `LONO_APP` and `LONO_ENV`. `LONO_APP` is only included when set. Examples:
+You probably noticed that the stack names automatically have LONO_ENV added to the blueprint name. Example:
 
 Command | CloudFormation Stack Name
 ---|---
 LONO_ENV=dev lono up demo | demo-dev
-LONO_APP=app1 LONO_ENV=dev lono up demo | demo-app1-dev
 
 ## Customizing
 
@@ -18,11 +17,19 @@ You can customize the stack naming pattern with `config.names.stack`.
 
 config/app.rb
 
-```ruby
+```Ruby
 Lono.configure do |config|
-  config.names.stack = ":BLUEPRINT-:APP-:ENV"
+  config.names.stack = ":APP-BLUEPRINT-:ENV"
 end
 ```
+
+## LONO_APP
+
+The stack name will also include `LONO_APP` when set. Example:
+
+Command | CloudFormation Stack Name
+---|---
+LONO_APP=app1 LONO_ENV=dev lono up demo | app1-demo-dev
 
 ## Clean Behavior
 
