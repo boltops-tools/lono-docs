@@ -120,22 +120,6 @@
           </li>
         </ul>
       </li>
-      <li><a href="{% link _docs/lonofile.md %}">Lonofile</a>
-        <ul>
-          <li><a href="{% link _docs/lonofile/usage.md %}">Usage</a></li>
-          <li><a href="{% link _docs/lonofile/options.md %}">Options</a></li>
-          <li><a href="{% link _docs/lonofile/sources.md %}">Sources</a>
-            <ul>
-              {% assign docs = site.docs | where: "categories","sources" | sort:"order" %}
-              {% for doc in docs -%}
-              <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
-              {% endfor %}
-            </ul>
-          <li><a href="{% link _docs/lonofile/version-locking.md %}">Version Locking</a></li>
-          <li><a href="{% link _docs/lonofile/terraform-notation.md %}">Terraform Notation</a></li>
-          <li><a href="{% link _docs/lonofile/env-vars.md %}">Env Vars</a></li>
-        </ul>
-      </li>
       <li><a href="{% link _docs/helpers.md %}">Helpers</a>
           <ul>
             {% assign docs = site.docs | where: "categories","helpers" | sort: "order" %}
@@ -154,6 +138,22 @@
               {% endif %}
             {% endfor %}
           </ul>
+      </li>
+      <li><a href="{% link _docs/lonofile.md %}">Lonofile</a>
+        <ul>
+          <li><a href="{% link _docs/lonofile/usage.md %}">Usage</a></li>
+          <li><a href="{% link _docs/lonofile/options.md %}">Options</a></li>
+          <li><a href="{% link _docs/lonofile/sources.md %}">Sources</a>
+            <ul>
+              {% assign docs = site.docs | where: "categories","sources" | sort:"order" %}
+              {% for doc in docs -%}
+              <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+              {% endfor %}
+            </ul>
+          <li><a href="{% link _docs/lonofile/version-locking.md %}">Version Locking</a></li>
+          <li><a href="{% link _docs/lonofile/terraform-notation.md %}">Terraform Notation</a></li>
+          <li><a href="{% link _docs/lonofile/env-vars.md %}">Env Vars</a></li>
+        </ul>
       </li>
       <li><a href="{% link _docs/extensions.md %}">Extensions</a>
           <ul>
