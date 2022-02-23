@@ -38,6 +38,5 @@ helpers | Define your custom helpers here. The custom helpers are available to t
 seed/vars | You can define files that the [lono seed]({% link _docs/config/seed.md %}) will use to generate starter vars files.
 template | You can also define template resources in the `template` folder. Any file with the `.rb` extension within this folder is evaluated by the [DSL]({% link _docs/dsl.md %}).
 template.rb | Where CloudFormation templates are defined.  Refer to the [DSL docs]({% link _docs/dsl.md %}) for the syntax.
-user_data | Where user_data scripts live. You can include the user data script into your code with the user_data [builtin helper]({% link _docs/helpers/builtin.md %})
 
 {% endif %}
