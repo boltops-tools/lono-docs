@@ -2,9 +2,7 @@
 title: Lonofile
 ---
 
-## Manage Lono Components
-
-The Lonofile allows you to manage and reusable lono components like blueprints, configsets, and extensions. You centrally define, manage, and update them. Add them to `Lonofile`:
+The Lonofile allows you to manage and reuse lono components like blueprints, configsets, and extensions. You centrally define, manage, and update them. Add them to `Lonofile`:
 
 Lonofile
 
