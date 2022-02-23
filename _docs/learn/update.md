@@ -46,7 +46,7 @@ You are also prompted for confirmation. Type `y` and press enter.
     BucketName = demo-dev-bucket-1p4y43txdk9zg
     $
 
-The modification has been deployed. You can configure with the AWS CLI. It will look something like this:
+The modification has been deployed. You can confirm with the AWS CLI. It will look something like this:
 
     $ aws s3api get-bucket-acl --bucket demo-dev-bucket-1p4y43txdk9zg | jq '.Grants[1]'
     {
