@@ -1,4 +1,4 @@
-You are shown what will change. There are 3 previews:
+You are shown what will change. There are 3 plan previews:
 
 1. **Template**: This is a diff of the already deployed Template YAML vs the newly built one.
 2. **Parameter**: This is a diff of the already deployed Parameters vs the new ones.

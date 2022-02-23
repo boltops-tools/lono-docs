@@ -1,13 +1,13 @@
 ---
-title: Previews
-nav_text: Previews
+title: Plan
+nav_text: Plan
 categories: intro
 order: 4
 ---
 
 Lono runs a "plan" that provides a preview of what will be deployed by showing the differences.
 
-{% include intro/previews.md %}
+{% include intro/plan.md %}
 
 ## Example
 

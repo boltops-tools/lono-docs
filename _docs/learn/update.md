@@ -26,7 +26,7 @@ Lono will show you a preview of the changes and prompt you to update the infrast
 
     Are you sure you want to update the demo-dev stack? (y/N)
 
-{% include intro/previews.md %}
+{% include intro/plan.md %}
 
 You are also prompted for confirmation. Type `y` and press enter.
 
