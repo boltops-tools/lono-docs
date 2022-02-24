@@ -1,8 +1,8 @@
 ---
-title: Configset Helpers
-nav_text: Helpers
-categories: configsets
-order: 6
+title: Configset Custom Helpers
+nav_text: Custom
+categories: configsets-helpers
+order: 2
 ---
 
 Helpers allow you to extend the Configset DSL.

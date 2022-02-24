@@ -167,14 +167,14 @@
           <ul>
             {% assign docs = site.docs | where: "categories","configsets" | sort: "order" %}
             {% for doc in docs -%}
-              {% if doc.title == "Project vs Blueprint Configsets" %}
+              {% if doc.url == "/docs/configsets/using/" %}
               <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
                   <ul>
-                      <li><a href='{% link _docs/configsets/project.md %}'>Project</a></li>
-                      <li><a href='{% link _docs/configsets/blueprint.md %}'>Blueprint</a></li>
+                      <li><a href='{% link _docs/configsets/using/project.md %}'>Project</a></li>
+                      <li><a href='{% link _docs/configsets/using/blueprint.md %}'>Blueprint</a></li>
                   </ul>
               </li>
-              {% elsif doc.title == "Configset DSL" %}
+              {% elsif doc.url == "/docs/configsets/dsl/" %}
               <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
                   <ul>
                       {% assign cs_dsl_docs = site.docs | where: "categories","configsets-dsl" | sort: "order" %}
@@ -183,13 +183,32 @@
                       {% endfor %}
                   </ul>
               </li>
+              {% elsif doc.url == "/docs/configsets/helpers/" %}
+              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
+                  <ul>
+                  {% assign cs_docs = site.docs | where: "categories","configsets-helpers" | sort: "order" %}
+                  {% for cs_doc in cs_docs -%}
+                    {% if cs_doc.url == "/docs/configsets/helpers/builtin/" %}
+                    <li><a href="{{ cs_doc.url }}">{{ cs_doc.nav_text }}</a>
+                    <ul>
+                      {% assign builtin_docs = site.docs | where: "categories","configsets-helpers-builtin" | sort: "order" %}
+                      {% for builtin in builtin_docs -%}
+                        <li><a href="{{ builtin.url }}">{{ builtin.nav_text }}</a></li>
+                      {% endfor %}
+                      </ul>
+                    </li>
+                    {% else %}
+                    <li><a href="{{ cs_doc.url }}">{{ cs_doc.nav_text }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+              </li>
               {% else %}
               <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
               {% endif %}
             {% endfor %}
           </ul>
       </li>
-      <li><a href="{% link _docs/lookups.md %}">Lookups</a></li>
       <li>Extras
           <ul>
             {% assign docs = site.docs | where: "categories","extras" | sort: "order" %}

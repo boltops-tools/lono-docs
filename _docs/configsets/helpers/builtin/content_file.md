@@ -1,5 +1,8 @@
 ---
 title: 'Configset Helper: content_file'
+nav_text: Content File
+categories: configsets-helpers-builtin
+order: 1
 ---
 
 The `content_file` helper reads the file in the configsets `lib/content` folder and returns it as a String. This helps you organized things and keep the [file]({% link _docs/configsets/dsl/file.md %}) method readable.

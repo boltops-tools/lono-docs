@@ -2,7 +2,7 @@
 title: Configset DSL
 nav_text: DSL
 categories: configsets
-order: 3
+order: 4
 ---
 
 Configsets can be written with a DSL. The DSL generates the [AWS::CloudFormation::Init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) YAML structure.  The DSL stays very close to the underlying structure, so there's little mental mapping.

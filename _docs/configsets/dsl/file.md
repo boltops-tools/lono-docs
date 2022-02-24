@@ -41,7 +41,7 @@ AWS::CloudFormation::Init:
         mode: '120644'
 ```
 
-Tip: The [content_file]({% link _docs/configsets/helpers/built-in/content_file.md %}) helper, can be use to clean up the code and move content to other files.
+Tip: The [content_file]({% link _docs/configsets/helpers/builtin/content_file.md %}) helper, can be use to clean up the code and move content to other files.
 
 Back to [DSL Docs]({% link _docs/configsets/dsl.md %})
 

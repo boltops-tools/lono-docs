@@ -16,16 +16,16 @@ Let's say you have two blueprints: ec2 and asg.
 * The ec2 blueprint has an `Instance` resource.
 * The asg blueprint has an `LaunchConfiguration` resource.
 
-You can reuse the same configsets for both blueprints. Example:
+You can reuse the same configsets for both blueprints by specifying them in the `configsets.rb`. Example:
 
-config/ec2/configsets/base.rb:
+config/blueprints/ec2/configsets.rb:
 
 ```ruby
 configset("cfn-hup", resource: "Instance")
 configset("httpd", resource: "Instance")
 ```
 
-config/asg/configsets/base.rb:
+config/blueprints/asg/configsets.rb:
 
 ```ruby
 configset("cfn-hup", resource: "LaunchConfiguration")
@@ -34,20 +34,20 @@ configset("httpd", resource: "LaunchConfiguration")
 
 ## UserData cfn-init
 
-The UserData script for the ec2 blueprint calls cfn-init like this:
+The UserData script for the ec2 blueprint would call `cfn-init` like so:
 
 ```bash
 #!/bin/bash
 /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}
 ```
 
-The asg blueprint's UserData calls cfn-init like this:
+The asg blueprint's UserData would call `cfn-init` like this:
 
 ```bash
 #!/bin/bash
 /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfiguration --region ${AWS::Region}
 ```
 
-The beauty is that you can choose whichever configsets are needed.  You don't have to copy and paste the configset into different templates. Just configure them, and lono injects them into the CloudFormation template for you.
+Notice that the `--resource` option is `Instance` vs `LaunchConfiguration`. This CloudFormation resource that the configset is associated with.
 
-
+The beauty is that you can choose whichever configsets are needed.  You don't have to copy and paste the configset into different templates. Just configure them, and lono adds them into the CloudFormation template for you.

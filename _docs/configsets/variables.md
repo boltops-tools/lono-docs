@@ -7,36 +7,29 @@ order: 7
 
 You can define variables to be made available in your configset code.
 
-## Configset Predefined Variables
+## Configset Default Variables
 
-Normally, configsets set predefined variables in their `lib/variables.rb` file.  Example:
+Normally, configsets set predefined variables in their `vars.rb` file.  Example:
 
-app/configsets/httpd/lib/variables.rb:
+app/configsets/httpd/vars.rb
 
 ```ruby
 @html =<<-EOL
 <h1>configset predefined variables</h1>
-<p>Hello there from app/configsets/httpd/lib/variables.rb:</p>
+<p>Hello from app/configsets/httpd/vars.rb</p>
 EOL
 ```
 
-## Set Configset Variables
+## User Customized Configset Variables
 
-You can set variables in the `config/blueprints/BLUEPRINT/configets` folder of your project. You can set variables globally or locally. Global overrides apply to all configsets used by the blueprint. Local overrides apply to the specifically scoped configset only.
+You can set custom variables with the `config/blueprints/BLUEPRINT/configsets/CONFIGSET.rb`. Notice how the configset variables are scoped to both blueprint and configset. Example:
 
-Examples:
-
-1. config/ec2/configsets/variables.rb - global override for all configsets used in the ec2 blueprint
-2. config/ec2/configsets/variables/httpd.rb - local override, only to the httpd configset
-
-If both global and local variables are set, the local variable takes higher precedence and will be used. It is generally recommended to use local overrides only. Example:
-
-config/ec2/configsets/variables/httpd.rb
+config/blueprints/ec2/configsets/vars/httpd.rb
 
 ```ruby
 @html =<<-EOL
 <h1>project variables.rb override</h1>
-<p>Hello there from config/ec2/configsets/variables/httpd.rb</p>
+<p>Hello there from config/blueprints/ec2/configsets/vars/httpd.rb</p>
 EOL
 ```
 
@@ -86,21 +79,19 @@ AWS::CloudFormation::Init:
 
 Note, we're also using the `indent` method to align the YAML content.
 
-## Configsets Configs are Ruby
+## Configsets are Ruby
 
-Since the configs file is Ruby, you have the full power of Ruby to organize things however you wish. Example:
+The configs file is just Ruby actually. So you have the full power of Ruby to organize things however you wish. Example:
 
-config/ec2/configsets/variables/httpd.rb
+config/blueprints/ec2/configsets/vars/httpd.rb
 
 ```ruby
 @html = IO.read(File.expand_path("html/index.html", __dir__))
 ```
 
-config/ec2/configsets/httpd/html/index.html:
+config/blueprints/ec2/configsets/httpd/html/index.html:
 
 ```html
 <h2>My html page</h2>
-<p>Hello there from config/ec2/configsets/httpd/html/index.html</p>
+<p>Hello from config/blueprints/ec2/configsets/httpd/html/index.html</p>
 ```
-
-

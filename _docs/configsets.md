@@ -2,7 +2,7 @@
 title: Configsets
 ---
 
-Configsets are essentially configuration management. Use configsets to configure and update your EC2 instances automatically. Lono allows you to use configsets in a reusable way.
+Configsets are essentially configuration management. You can use configsets to install and configure software on your EC2 instances automatically. Lono allows you to use configsets in a reusable way.
 
 ## Configuration Management Tool
 

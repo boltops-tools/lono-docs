@@ -1,6 +1,6 @@
 ## Basic Structure
 
-The most basic blueprint structure can simply have only one file.
+The most basic blueprint structure simply has one file.
 
     app/blueprints/demo
     └── template.rb

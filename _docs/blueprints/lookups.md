@@ -1,5 +1,8 @@
 ---
 title: Lookups
+nav_text: Lookups
+categories: blueprint
+order: 2
 ---
 
 Lono blueprints can be in different locations. Lono searches the locations, similar to how `LOAD_PATH` works. The locations are:

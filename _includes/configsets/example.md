@@ -2,7 +2,7 @@
 
 Here's a simple configset example in [DSL form]({% link _docs/configsets/dsl.md %}).
 
-app/configsets/httpd/lib/configset.rb:
+app/configsets/httpd/configset.rb:
 
 ```ruby
 package("yum",
@@ -21,7 +21,7 @@ service("sysvinit",
 
 The configet can also be written in [ERB form]({% link _docs/configsets/erb.md %}).
 
-app/configsets/httpd/lib/configset.yml:
+app/configsets/httpd/configset.yml:
 
 ```yaml
 AWS::CloudFormation::Init:
