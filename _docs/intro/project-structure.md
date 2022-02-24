@@ -40,7 +40,7 @@ config/app.rb | Lono's behavior can be tailored with [config/app.rb]({% link _do
 config/blueprints/demo/configsets | Where configsets are configured.  You can selectively add configsets to templates. [Configsets Docs]({% link _docs/configsets.md %})
 config/blueprints/demo/params | Where CloudFormation run-time parameters can be defined.  [Parameters]({% link _docs/config/params.md %}) are defined with env-like files.
 config/blueprints/demo/vars | Where Lono variables can be defined.  [Variables]({% link _docs/config/variables.md %}) can be used to compile down different templates. This is useful when run-time parameters do not suffice.
-output/demo/params | Where the generated CloudFormation parameters files get written to.
-output/demo/templates | Where the generated CloudFormation templates get written to.
+output/demo/params.json | Where the compiled CloudFormation parameters file get written to.
+output/demo/template.yml | Where the compiled CloudFormation template get written to.
 
 That's the basic lono project structure.
