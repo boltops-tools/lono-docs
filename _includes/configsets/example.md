@@ -1,8 +1,8 @@
 ## Configset Example
 
-Here's a simple configset example in [DSL form]({% link _docs/configsets/dsl.md %}).
+Here's a simple configset example in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. 
 
-app/configsets/httpd/configset.rb:
+app/configsets/httpd/configset.rb
 
 ```ruby
 package("yum",
@@ -19,9 +19,9 @@ service("sysvinit",
 )
 ```
 
-The configet can also be written in [ERB form]({% link _docs/configsets/erb.md %}).
+The configet can also be written in [ERB form]({% link _docs/configsets/erb.md %}). This form is what most people who CloudFormation are used to seeing. 
 
-app/configsets/httpd/configset.yml:
+app/configsets/httpd/configset.yml
 
 ```yaml
 AWS::CloudFormation::Init:
