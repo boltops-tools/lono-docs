@@ -5,7 +5,7 @@ categories: configsets
 order: 8
 ---
 
-Configsets also support their own notion of variables layering. Remember, the variables can change how the configset code gets compiled.
+Configsets also support their own notion of variables layering. Remember, variables change how the configset code gets compiled.
 
 ## Layering Basics
 
