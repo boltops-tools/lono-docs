@@ -42,7 +42,7 @@ config/boot/dev.rb
 ENV['AWS_PROFILE'] = 'dev'
 ```
 
-This example is for AWS, but you can can do similiar switch logic with `GOOGLE_APPLICATION_CREDENTIALS`, etc.
+This example is for `AWS_PROFILE`, but you can can do similiar switch logic with other env vars, etc.
 
 ## Boot Source
 
