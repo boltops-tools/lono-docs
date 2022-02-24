@@ -6,7 +6,7 @@ Configsets are essentially configuration management. You can use configsets to i
 
 ## Configuration Management Tool
 
-There are several configuration management tools out there: [chef](https://www.chef.io/configuration-management/), [puppet](https://puppet.com/), [ansible](https://www.ansible.com/), [salt](https://docs.saltstack.com/en/latest/), [configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html).  They all perform these 3 steps:
+There are several configuration management tools out there: [chef](https://www.chef.io/configuration-management/), [puppet](https://puppet.com/), [ansible](https://www.ansible.com/), [salt](https://docs.saltstack.com/en/latest/), [configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html).  They all can perform these 3 steps:
 
 1. Install a package
 2. Configure it
@@ -18,12 +18,12 @@ There are several configuration management tools out there: [chef](https://www.c
 
 Your project configsets are located in the `app/configsets`. Example:
 
-* app/configsets/cfn-hup/lib/configset.rb
-* app/configsets/httpd/lib/configset.rb
+* app/configsets/cfn-hup/configset.rb
+* app/configsets/httpd/configset.rb
 
 You tell lono to add them to CloudFormation templates with configs. Example:
 
-config/ec2/configsets/base.rb:
+config/blueprints/ec2/configsets.rb:
 
 ```ruby
 configset("cfn-hup", resource: "Instance")
