@@ -9,7 +9,7 @@ You can define variables to be made available in your configset code.
 
 ## Configset Default Variables
 
-Normally, configsets set predefined variables in their `vars.rb` file.  Example:
+Normally, configsets set default variables in their `vars.rb` file.  Example:
 
 app/configsets/httpd/vars.rb
 
@@ -20,7 +20,7 @@ app/configsets/httpd/vars.rb
 EOL
 ```
 
-## User Customized Configset Variables
+## User Custom Configset Variables
 
 You can set custom variables with the `config/blueprints/BLUEPRINT/configsets/CONFIGSET.rb`. Notice how the configset variables are scoped to both blueprint and configset. Example:
 
