@@ -2,7 +2,7 @@
 title: Configsets
 ---
 
-Configsets are essentially configuration management. You can use configsets to install and configure software on your EC2 instances automatically. Lono allows you to use configsets in a reusable way.
+Configsets are essentially configuration management embedded into the CloudFormation template. You can use configsets to install and configure software on your EC2 instances automatically. Lono allows you to use configsets in a reusable way.
 
 ## Configuration Management Tool
 
@@ -23,7 +23,7 @@ Your project configsets are located in the `app/configsets`. Example:
 
 You tell lono to add them to CloudFormation templates with configs. Example:
 
-config/blueprints/ec2/configsets.rb:
+config/blueprints/ec2/configsets.rb
 
 ```ruby
 configset("cfn-hup", resource: "Instance")
@@ -32,7 +32,7 @@ configset("httpd", resource: "Instance")
 
 This installs [cfn-hup](https://github.com/boltopspro/cfn-hup) and [httpd](https://github.com/boltopspro/httpd) on the EC2 instance.
 
-More specifically, lono injects the 2 configsets to the CloudFormation template resource with the logical id `Instance`.  The cfn-hup and httpd configsets are added to the `Instance.Metadata.AWS::CloudFormation::Init` attribute.
+More specifically, lono adds the 2 configsets to the CloudFormation template resource with the logical id `Instance`.  The cfn-hup and httpd configsets are added to the `Instance.Metadata.AWS::CloudFormation::Init` attribute.
 
 You have full control over which configsets to use for each template.
 
