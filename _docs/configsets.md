@@ -6,11 +6,13 @@ Configsets are essentially configuration management embedded into the CloudForma
 
 ## Configuration Management Tool
 
-There are several configuration management tools out there: [chef](https://www.chef.io/configuration-management/), [puppet](https://puppet.com/), [ansible](https://www.ansible.com/), [salt](https://docs.saltstack.com/en/latest/), [configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html).  They all can perform these 3 steps:
+There are several configuration management tools out there: [chef](https://www.chef.io/configuration-management/), [puppet](https://puppet.com/), [ansible](https://www.ansible.com/), [salt](https://docs.saltstack.com/en/latest/). They all can perform these 3 steps:
 
 1. Install a package
 2. Configure it
 3. Run it as a Service
+
+[Configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) are just a lightweight version of configuration management software provided by AWS. 
 
 {% include configsets/example.md %}
 
