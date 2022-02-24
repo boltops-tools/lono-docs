@@ -5,7 +5,7 @@ title: Configure AWS
 Configure AWS so Lono can connect to it. The recommended way is to:
 
 1. set up the `~/.aws/config` and `~/.aws/credentials` files
-2. set up your `AWS_PROFILE` and `AWS_REGION` environment variables
+2. set up your `AWS_PROFILE` environment variable. 
 
 ## Example
 
