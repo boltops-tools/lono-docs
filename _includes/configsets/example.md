@@ -1,6 +1,6 @@
 ## Configset Example
 
-Here's a simple configset example in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. 
+Here's a simple configset example in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. The DSL compiles down to YAML. 
 
 app/configsets/httpd/configset.rb
 
@@ -19,7 +19,7 @@ service("sysvinit",
 )
 ```
 
-The configet can also be written in [ERB form]({% link _docs/configsets/erb.md %}). This form is what most people who CloudFormation are used to seeing. 
+The configet can also be written in [ERB form]({% link _docs/configsets/erb.md %}). This form is what you'll see in CloudFormation templates out there 
 
 app/configsets/httpd/configset.yml
 
