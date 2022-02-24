@@ -21,12 +21,9 @@ Configure AWS so Lono can connect to it. The recommended way is to:
     aws_access_key_id = REPLACE_ME
     aws_secret_access_key = REPLACE_ME
 
-In your `~/.bashrc` or `~/.profile`, use this line to set the `AWS_PROFILE` and `AWS_REGION` environment variables:
+In your `~/.bashrc` or `~/.profile`, use this line to set the `AWS_PROFILE` environment variable:
 
     export AWS_PROFILE=dev
-    export AWS_REGION=`aws configure get region` # to match what's in ~/.aws/config
-
-The reason we have to configure `AWS_REGION` also, is because Terraform doesn't seem to use the `~/.aws/config` setting, but will use the `AWS_REGION`.
 
 ## Test AWS Setup
 
