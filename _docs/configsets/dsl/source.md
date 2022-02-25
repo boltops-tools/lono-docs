@@ -35,12 +35,12 @@ Private S3 sources require a [AWS::CloudFormation::Authentication](https://docs.
 
 ```ruby
 authentication "IamRole" # adjust to match IamRole in template
-source("/opt/mygem" => s3_key("mygem")) # uses lib/files/mygem folder
+source("/opt/mygem" => s3_file("files/mygem")) # uses files/mygem folder
 ```
 
-The `s3_key("mygem")` corresponds to the `lib/files/mygem` folder within the configset. For example:
+The `s3_file("files/mygem")` corresponds to the `files/mygem` folder within the configset. For example:
 
-    app/configsets/myconfigset/lib/files/mygem
+    app/configsets/myconfigset/files/mygem
 
 The code uses this info to generate:
 
@@ -62,13 +62,13 @@ AWS::CloudFormation::Authentication:
       Ref: IamRole
 ```
 
-Files in the the configset `lib/files/mygem` directory are zipped and uploaded to S3 as part of the [lono up]({% link _reference/lono-up.md %}) process. It's s3 location is then reference in the template. This spares you from having to upload files manually and updating the template.
+Files in the the configset `files/mygem` directory are zipped and uploaded to S3 as part of the [lono up]({% link _reference/lono-up.md %}) process. It's s3 location is then reference in the template. This spares you from having to upload files manually and updating the template.
 
 ### authentication as variable
 
 The authentication IAM role can also be set as variable:
 
-config/blueprints/BLUEPRINT/configsets/variables.rb:
+config/blueprints/BLUEPRINT/configsets/vars.rb
 
 ```ruby
 @authentication = "IamRole"
@@ -80,7 +80,7 @@ By design, the `@authentication` variable takes higher precedence than the value
 
 The authentication can also accept the full structure of [AWS::CloudFormation::Authentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) resource.
 
-config/blueprints/BLUEPRINT/configsets/variables.rb:
+config/blueprints/BLUEPRINT/configsets/vars.rb
 
 ```ruby
 @authentication = {
