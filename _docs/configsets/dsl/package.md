@@ -1,6 +1,6 @@
 ---
 title: package
-nav_text: DSL
+nav_text: package
 desc: You can use the packages key to download and install pre-packaged applications
   and components. On Windows systems, the packages key supports only the MSI installer.
   The package method maps to the AWS::CloudFormation::Init [packages](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-packages)
