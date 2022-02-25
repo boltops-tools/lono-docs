@@ -5,7 +5,7 @@ category: layering
 order: 6
 ---
 
-You can configure a `layering.names` map to assign friendly names to the layer name.  Currently, namespace is supported. Example setup:
+You can configure a `layering.names` map to assign friendly names to the layer name.  Currently, `account` is supported. Example setup:
 
 config/app.rb
 
@@ -18,7 +18,7 @@ Lono.configure do |config|
 end
 ```
 
-This maps the `111111111111` namespace to a friendly  name `dev-account`. So when you build or deploy it'll use the friendly name. Example:
+This maps the `111111111111` account to a friendly  name `dev-account`. So when you build or deploy it'll use the friendly name. Example:
 
     $ ls config/blueprints/demo/params/dev-account
     base.txt
