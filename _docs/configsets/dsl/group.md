@@ -1,6 +1,6 @@
 ---
 title: group
-nav_text: DSL
+nav_text: group
 desc: You can use the groups key to create Linux/UNIX groups and to assign group IDs.
   The group method maps to the AWS::CloudFormation::Init [groups](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-groups)
   section.
