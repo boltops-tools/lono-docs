@@ -12,7 +12,7 @@ There are several configuration management tools out there: [chef](https://www.c
 2. Configure it
 3. Run it as a Service
 
-[Configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) is just configuration management software provided by AWS for free. Configsets are **very** lightweight. Though they, like all other configuration management tools, have their quirks, they can work for companies who don't have the time or budget to use other tools. The [cfn-init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-init.html) script, which runs and applies configsets, is preintalled on Amazon Linux. 
+[Configsets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) is just configuration management software provided by AWS for free. Configsets are **very** lightweight. Though they, like all other configuration management tools, have their quirks, they can work for companies who don't have the time or budget to use other tools. The [cfn-init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-init.html) script, which runs and applies configsets, is preinstalled on Amazon Linux. 
 
 {% include configsets/example.md %}
 
