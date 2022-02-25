@@ -96,9 +96,9 @@
         <ul>
           <li><a href="{% link _docs/dsl/basics.md %}">Basics</a>
             <ul>
-            {% assign docs = site.docs | where: "categories","dsl-basics" | sort: "order" %}
-            {% for doc in docs -%}
-              <li><a href='{{doc.url}}'>{{doc.title}}</a></li>
+            {% assign cs_dsl_docs = site.docs | where: "categories","dsl-basics" | sort: "order" %}
+            {% for cs_dsl_doc in cs_dsl_docs -%}
+              <li><a href='{{cs_dsl_doc.url}}'>{{cs_dsl_doc.nav_text}}</a></li>
             {% endfor %}
             </ul>
           </li>
