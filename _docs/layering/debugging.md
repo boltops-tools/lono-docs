@@ -29,9 +29,11 @@ This will show the **found** layers.
         config/blueprints/demo/params/base.txt
         config/blueprints/demo/params/dev.txt
 
+Note: This will turn on debugging for configset layering also. See: [Configsets Layering Debugging]({% link _docs/configsets/layering/debugging.md %}).
+
 ## All Considered Layers
 
-If you want to also see all the considered layers use `LONO_SHOW_ALL_LAYERS=1`. Remember, config.logger.level = "debug" needs to also be configured.
+If you want to also see all the considered layers use `LONO_SHOW_ALL_LAYERS=1`. Remember, `config.logger.level = "debug"` needs to also be configured.
 
     $ export LONO_SHOW_ALL_LAYERS=1
     $ lono build demo

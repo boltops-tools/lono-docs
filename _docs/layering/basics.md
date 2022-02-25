@@ -24,7 +24,19 @@ Params have a `.txt` extension and vars have a `.rb` extension. We'll show a par
 
 In this case, you want to define your base params used for templates in the `base.txt` and overrides in `prod.txt`.
 
-More step-by-step docs are provided below:
+## Top-Level Folders: app vs config
+
+The basics example above shows layering with the top-level `config` folder.  You can also define your params and vars in the top-level `app` folder. Here's an example of the different paths:
+
+    app/blueprints/demo/config/params - processed first
+    config/blueprints/demo/params - processed later and takes higher precedence
+
+Generally, it's recommended to set your custom params and vars in the top-level `config` folder. The blueprint will define defaults in the `app/blueprints/demo` folder.
+
+## More
+
+More step-by-step docs are provided in the next documentation pages and go into more details on layering.
 
 * [Params]({% link _docs/layering/params.md %})
 * [Variables]({% link _docs/layering/variables.md %})
+* [Full Layering]({% link _docs/layering/full.md %})
