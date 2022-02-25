@@ -24,6 +24,8 @@ app/blueprints/demo/template.rb
 bucket
 ```
 
+Note: Project-level helpers must be within a subfolder. For example, `app/helpers/bucket/bucket_helper.rb` works and `app/helpers/bucket_helper.rb` will not work.
+
 ## Generate Helper
 
 You can generate a starter helper module with:
