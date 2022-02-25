@@ -32,6 +32,8 @@ configset("cfn-hup", resource: "LaunchConfiguration")
 configset("httpd", resource: "LaunchConfiguration")
 ```
 
+Maybe even more importantly, if you make an update or fix a bug in the configset code, it's fixed everywhere. 
+
 ## UserData cfn-init
 
 The UserData script for the ec2 blueprint would call `cfn-init` like so:
