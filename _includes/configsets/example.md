@@ -1,6 +1,6 @@
 ## Configset Example
 
-The configet can be written in [YAML form]({% link _docs/configsets/erb.md %}). This form is what you'll typically see in CloudFormation templates out there. Lono adds a little Ruby sprinkles by allowing you to use ERB templating also. 
+The configset can be written in [YAML form]({% link _docs/configsets/erb.md %}). This form is what you'll typically see in CloudFormation templates out there. Lono adds a little Ruby sprinkles by allowing you to use ERB templating also. 
 
 app/configsets/httpd/configset.yml
 
