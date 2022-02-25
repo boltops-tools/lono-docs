@@ -133,6 +133,15 @@
                 {% endfor %}
                 </ul>
               </li>
+              {% elsif doc.url == "/docs/helpers/custom/" %}
+              <li><a href="{% link _docs/helpers/custom.md %}">Custom</a>
+                <ul>
+                {% assign builtin = site.docs | where: "categories","custom-helpers" | sort: "order" %}
+                {% for doc in builtin -%}
+                  <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+                {% endfor %}
+                </ul>
+              </li>
               {% else %}
               <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
               {% endif %}

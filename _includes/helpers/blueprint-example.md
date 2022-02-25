@@ -1,4 +1,4 @@
-## Example Helper
+## Example Blueprint Helper
 
 You define helpers in the blueprint's `helpers` folder as a Ruby module.  The module name should be the camelized version of the file name. Here's an example where a helper is used to set default properties and remove the need to set the resource type:
 
@@ -39,13 +39,13 @@ security_group("SecurityGroup",
 
 You can generate a starter helper module with:
 
-    lono new helper --name NAME --blueprint BLUEPRINT # general form
-    lono new helper --name custom --blueprint demo
-    lono new helper --blueprint demo # also works --name defaults to custom
+    lono new helper blueprint HELPER_NAME --blueprint BLUEPRINT # general form
+    lono new helper blueprint custom --blueprint demo
+    lono new helper blueprint --blueprint demo # the helper name defaults to custom
 
 Example:
 
-    $ lono new helper --blueprint demo
+    $ lono new helper blueprint --blueprint demo
     => Generating helper: custom
           create  app/blueprints/demo/helpers/custom_helper.rb
     $
