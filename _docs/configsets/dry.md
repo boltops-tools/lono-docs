@@ -48,6 +48,6 @@ The asg blueprint's UserData would call `cfn-init` like this:
 /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfiguration --region ${AWS::Region}
 ```
 
-Notice that the `--resource` option is `Instance` vs `LaunchConfiguration`. This CloudFormation resource that the configset is associated with.
+Notice that the `--resource` option is `Instance` vs `LaunchConfiguration`. This is the CloudFormation resource that the configset is associated with.
 
 The beauty is that you can choose whichever configsets are needed.  You don't have to copy and paste the configset into different templates. Just configure them, and lono adds them into the CloudFormation template for you.
