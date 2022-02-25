@@ -1,6 +1,6 @@
 ---
 title: service
-nav_text: DSL
+nav_text: service
 desc: You can use the services key to define which services should be enabled or disabled
   when the instance is launched. On Linux systems, this key is supported by using
   sysvinit. On Windows systems, it is supported by using the Windows service manager.
