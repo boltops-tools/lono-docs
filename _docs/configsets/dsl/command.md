@@ -1,6 +1,6 @@
 ---
 title: command
-nav_text: DSL
+nav_text: command
 desc: You can use the commands key to execute commands on the EC2 instance. The command
   method maps to the AWS::CloudFormation::Init [commands](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-commands)
   section.
