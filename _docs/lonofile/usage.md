@@ -7,9 +7,9 @@ title: Lonofile Usage
 Here's an example `Lonofile`.
 
 ```ruby
-blueprint "ec2",   source: "git@github.com:boltops-tools/ec2-blueprint"
-configset "httpd", source: "git@github.com:boltops-tools/httpd-configset"
-extension "ec2",   source: "git@github.com:boltops-tools/ec2-extension"
+blueprint "ec2",   source: "boltops-tools/ec2-blueprint"
+configset "httpd", source: "boltops-tools/httpd-configset"
+helper    "ec2",   source: "boltops-tools/ec2-extension"
 ```
 
 **Options Docs**:

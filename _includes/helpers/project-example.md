@@ -41,3 +41,11 @@ Example:
           create  app/helpers/bucket
           create  app/helpers/bucket/bucket_helper.rb
     $
+
+## Vendor Helpers and Precedence
+
+Project-level helpers can also be defined in `vendor/helpers`.  This works with the [Lonofile]({% link _docs/lonofile.md %}).  The order of precedence is:
+
+    app/blueprints/demo/helpers # highest precedence
+    app/helpers
+    vendor/helpers              # lowest precedence
