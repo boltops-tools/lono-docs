@@ -1,6 +1,6 @@
 ---
 title: file
-nav_text: DSL
+nav_text: file
 desc: You can use the files key to create files on the EC2 instance. The content can
   be either inline in the template or the content can be pulled from a URL. The file
   method maps to the AWS::CloudFormation::Init [files](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-files)
