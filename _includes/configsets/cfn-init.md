@@ -8,6 +8,6 @@ yum install -y aws-cfn-bootstrap # install cfn-init
 /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}
 ```
 
-The `${AWS::StackName}` and `${AWS::Region}` will be substituted for their actual values at CloudFormation runtime.  The `--resource Instance` specifies which resource to add the configsets to.
+The `${AWS::StackName}` and `${AWS::Region}` will be substituted for their actual values at CloudFormation runtime.  The `--resource Instance` specifies which resource logical id in the CloudFormation template that has the metadata with configset instructions to apply.
 
 Note: On AmazonLinux2 cfn-init is already installed.
