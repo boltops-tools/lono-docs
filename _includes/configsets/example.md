@@ -12,7 +12,7 @@ AWS::CloudFormation::Init:
         httpd: []
     files:
       "/var/www/html/index.html":
-        content: <%= @html =>
+        content: <%= @html %>
     services:
       sysvinit:
         httpd:
