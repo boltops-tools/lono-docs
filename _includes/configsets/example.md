@@ -22,7 +22,7 @@ AWS::CloudFormation::Init:
 
 This configset will install, configure, and ensure that the httpd server is running, even if the server is rebooted.
 
-The configset can also be written in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. The DSL compiles down to YAML and does the same this as the YAML form above. 
+The configset can also be written in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. The DSL compiles down to YAML and does the same thing as the YAML form above. 
 
 app/configsets/httpd/configset.rb
 
