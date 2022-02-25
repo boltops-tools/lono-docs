@@ -3,7 +3,7 @@ title: Blueprint-Level Configsets
 nav_text: Blueprint
 ---
 
-Blueprint can prepackage configsets themselves. Blueprint specify configsets with `configsets.rb`. Example:
+Blueprint can preconfigure configsets themselves. Blueprint specify configsets with `configsets.rb`. Example:
 
 app/blueprints/ec2/configsets.rb:
 
