@@ -1,6 +1,6 @@
 ---
-title: Reusable Configusets
-nav_text: Reusable
+title: "DRY: Reusable Configusets"
+nav_text: DRY
 categories: configsets
 order: 1
 ---

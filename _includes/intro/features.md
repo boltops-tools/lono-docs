@@ -7,4 +7,5 @@
 * [Variables]({% link _docs/layering/variables.md %}): Compile down different templates when runtime Parameters do not suffice.
 * [Helpers]({% link _docs/helpers.md %}): Extend Lono and simplify code like a first-class citizen.
 * [Configsets]({% link _docs/configsets.md %}): Configuration Management. Configure EC2 instances with reuseable code.
-* [Lonofile]({% link _docs/lonofile.md %}): Reuse blueprints.
+* [DRY]({% link _docs/intro/dry.md %}): Do not repeat yourself. Reuse blueprints.
+* [Lonofile]({% link _docs/lonofile.md %}): Centrally manage blueprints.

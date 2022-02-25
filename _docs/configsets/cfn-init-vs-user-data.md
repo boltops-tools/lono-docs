@@ -19,6 +19,6 @@ Note: If you are using cfn-init with AutoScaling, CloudFormation will only repla
 
 ### Are configsets reusable?
 
-Normally, with CloudFormation, configs from [AWS::CloudFormation::Init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) are not [reusable](https://stackoverflow.com/questions/27499509/reusing-awscloudformationinit-and-userdata-for-multiple-instances). However, lono allows them to be reusable since lono injects them into the template down as part of deployment. More details: [Lono Configsets]({% link _docs/configsets/reusable.md %})
+Normally, with CloudFormation, configs from [AWS::CloudFormation::Init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html) are not [reusable](https://stackoverflow.com/questions/27499509/reusing-awscloudformationinit-and-userdata-for-multiple-instances). However, lono allows them to be reusable since lono injects them into the template down as part of deployment. More details: [Lono Configsets]({% link _docs/configsets/dry.md %})
 
 
