@@ -1,6 +1,6 @@
 ---
 title: configset
-nav_text: DSL
+nav_text: configset
 desc: You can use the configset method to build multiple configset blocks within one
   configset. This allow you to better organize large configsets. Also, as noted in
   [AWS::CloudFormation::Init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html),
