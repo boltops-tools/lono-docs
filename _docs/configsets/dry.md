@@ -7,7 +7,7 @@ order: 1
 
 Typically, configsets are directly hardcoded into the CloudFormation template. Unfortunately, this makes them hard to reuse. IE: You copy and paste the configset code between CloudFormation templates.
 
-With Lono, configsets are define separately from the template. Lono takes the configsets and dynamically adds them into your CloudFormation templates. This allows them to be reusable with different templates.
+With Lono, configsets are define separately from the template. Lono takes the configsets and dynamically adds them to your CloudFormation templates. This allows them to be reusable with different templates.
 
 ## Example
 
