@@ -1,6 +1,6 @@
 ---
 title: user
-nav_text: DSL
+nav_text: user
 desc: You can use the users key to create Linux/UNIX users on the EC2 instance. The
   user method maps to the AWS::CloudFormation::Init [users](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-users)
   section.
