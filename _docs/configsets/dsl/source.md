@@ -1,6 +1,6 @@
 ---
 title: source
-nav_text: DSL
+nav_text: source
 desc: You can use the sources key to download an archive file and unpack it in a target
   directory on the EC2 instance. This key is fully supported for both Linux and Windows
   systems. The source method maps to the AWS::CloudFormation::Init [sources](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html#aws-resource-init-sources)
