@@ -6,12 +6,13 @@ app/helpers/bucket/bucket_helper.rb
 
 ```ruby
 module BucketHelper
-  def bucket
+  def bucket(logical_id)
+    param = "#{logical_id}Name"
     properties = {
-      BucketName: ref("BucketName", Conditional: true),
+      BucketName: ref(param, Conditional: true),
       AccessControl: "Private",
     }
-    resource("Bucket", "AWS::S3::Bucket", properties)
+    resource(logical_id, "AWS::S3::Bucket", properties)
   end
 end
 ```
@@ -21,7 +22,9 @@ You can use the helper in your template:
 app/blueprints/demo/template.rb
 
 ```ruby
-bucket
+parameter("BucketName", Conditional: true)
+bucket("Bucket")
+output("BucketName", ref("Bucket"))
 ```
 
 Note: Project-level helpers must be within a subfolder. For example, `app/helpers/bucket/bucket_helper.rb` works and `app/helpers/bucket_helper.rb` will not work.
