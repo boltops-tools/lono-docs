@@ -11,7 +11,7 @@ Helpers allow you to extend the Configset DSL.
 
 Here's a simple example that will add a `yum` keyword.
 
-helpers/yum_helper.rb
+app/configsets/httpd/helpers/yum_helper.rb
 
 ```ruby
 module YumHelper
