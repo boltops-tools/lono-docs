@@ -17,7 +17,7 @@ We'll go through an example with params. Given a blueprint named `demo` and the 
 * `base.txt` is always evaluated.
 * `dev.txt` or `prod.txt` is evaluated based on `LONO_ENV`.
 
-In this case, you want to define your base params used for templates in the `base.txt` and overrides in `prod.txt`. For example, let's say we're setting the min and max size of an autoscaling group. We could have something like this:
+In this case, you want to define your base params used for templates in the `base.txt` and overrides in `prod.txt`. For example, let's say we want a different instance type for dev and prod. We could have something like this:
 
 config/blueprints/demo/params/base.txt:
 
