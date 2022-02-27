@@ -2,7 +2,7 @@
 title: Using Configsets
 nav_text: Using
 categories: configsets
-order: 2
+order: 3
 ---
 
 There are 2 different ways to specify which configsets you want to use.

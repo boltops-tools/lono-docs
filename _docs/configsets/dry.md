@@ -2,7 +2,7 @@
 title: "DRY: Reusable Configusets"
 nav_text: DRY
 categories: configsets
-order: 1
+order: 2
 ---
 
 Typically, configsets are directly hardcoded into the CloudFormation template. Unfortunately, this makes them hard to reuse. IE: You copy and paste the configset code between CloudFormation templates.
@@ -32,7 +32,7 @@ configset("cfn-hup", resource: "LaunchConfiguration")
 configset("httpd", resource: "LaunchConfiguration")
 ```
 
-Maybe even more importantly, if you make an update or fix a bug in the configset code, it's fixed everywhere. 
+Maybe even more importantly, if you make an update or fix a bug in the configset code, it's fixed everywhere.
 
 ## UserData cfn-init
 
