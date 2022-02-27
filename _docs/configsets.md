@@ -18,12 +18,12 @@ There are several configuration management tools out there: [chef](https://www.c
 
 ## Usage
 
-Your project configsets are located in the `app/configsets`. Example:
+You can **define** configsets in the `app/configsets`. Example:
 
 * app/configsets/cfn-hup/configset.rb
 * app/configsets/httpd/configset.rb
 
-You tell lono to add them to CloudFormation templates with configs. Example:
+You **configure** configsets and tell lono to add them to CloudFormation templates with configs, either in your app/blueprints or in the config/blueprints configs. Example:
 
 config/blueprints/ec2/configsets.rb
 
