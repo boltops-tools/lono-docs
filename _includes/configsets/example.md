@@ -1,6 +1,6 @@
 ## Configset Example
 
-The configset can be written in [YAML form]({% link _docs/configsets/erb.md %}). This form is what you'll typically see in CloudFormation templates out there. Lono adds a little Ruby sprinkles by allowing you to use ERB templating also. 
+The configset can be written in [YAML form]({% link _docs/configsets/erb.md %}). This form is what you'll typically see in CloudFormation templates out there. Lono adds a little Ruby sprinkles by allowing you to use ERB templating also.
 
 app/configsets/httpd/configset.yml
 
@@ -22,7 +22,7 @@ AWS::CloudFormation::Init:
 
 This configset will install, configure, and ensure that the httpd server is running, even if the server is rebooted.
 
-The configset can also be written in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. The DSL compiles down to YAML and does the same thing as the YAML form above. 
+The configset can also be written in [DSL form]({% link _docs/configsets/dsl.md %}). This DSL is provided by Lono. The DSL compiles down to YAML and does the same thing as the YAML form above.
 
 app/configsets/httpd/configset.rb
 
@@ -41,4 +41,5 @@ service("sysvinit",
 )
 ```
 
-The DSL methods are pretty much a one-to-one mapping to the YAML configset fields. 
+The DSL methods are pretty much a one-to-one mapping to the YAML configset fields. For more methods, see the [DSL Docs]({% link _docs/configsets/dsl.md %}).
+

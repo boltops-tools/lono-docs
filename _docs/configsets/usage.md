@@ -2,7 +2,7 @@
 title: Usage
 nav_text: Usage
 categories: configsets
-order: 1
+order: 2
 ---
 
 {% include configsets/example.md %}

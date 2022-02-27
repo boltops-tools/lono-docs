@@ -1,9 +1,9 @@
 ---
-title: Project-Level Configsets
+title: Configure Configsets at the Project-Level
 nav_text: Project
 ---
 
-Project configsets are added at the lono project-level.
+Project configsets can be added at the lono project-level.
 
 ## Specifying Configsets
 

@@ -168,11 +168,11 @@
           <ul>
             {% assign docs = site.docs | where: "categories","configsets" | sort: "order" %}
             {% for doc in docs -%}
-              {% if doc.url == "/docs/configsets/using/" %}
+              {% if doc.url == "/docs/configsets/configure/" %}
               <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
                   <ul>
-                      <li><a href='{% link _docs/configsets/using/project.md %}'>Project</a></li>
-                      <li><a href='{% link _docs/configsets/using/blueprint.md %}'>Blueprint</a></li>
+                      <li><a href='{% link _docs/configsets/configure/project.md %}'>Project</a></li>
+                      <li><a href='{% link _docs/configsets/configure/blueprint.md %}'>Blueprint</a></li>
                   </ul>
               </li>
               {% elsif doc.url == "/docs/configsets/dsl/" %}

@@ -1,5 +1,5 @@
 ---
-title: Blueprint-Level Configsets
+title: Configure Configsets in the Blueprint
 nav_text: Blueprint
 ---
 
@@ -23,6 +23,6 @@ app/blueprints/ec2/configsets/vars/httpd.rb:
 @html = "default example html"
 ```
 
-This can be overriden by the user at the project-level with `config/blueprints/ec2/configsets/vars/httpd.rb`. See: [Project-Level Configset Variables]({% link _docs/configsets/using/project.md %}#configset-variables).
+This can be overriden by the user at the project-level with `config/blueprints/ec2/configsets/vars/httpd.rb`. See: [Project-Level Configset Variables]({% link _docs/configsets/configure/project.md %}#configset-variables).
 
 {% include configsets/cfn-init.md %}
