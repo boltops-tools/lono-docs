@@ -5,7 +5,7 @@ categories: intro
 order: 5
 ---
 
-Lono design's allow you to reuse CloudFormation templates.  A key is the separation of config and template code in a structured and organized way.
+Lono design allows you to reuse CloudFormation templates.  A key is the separation of config and template code in a structured and organized way.
 
 ## Configs
 
