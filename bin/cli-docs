@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -eux
+
+DOCS=`pwd` # save lono-docs location
+
+mkdir -p /tmp/lono/cli-docs
+cd /tmp/lono/cli-docs
+
+# To use an lono edge, just symlink it
+if [ ! -e /tmp/lono/cli-docs/lono ] ; then
+  git clone https://github.com/boltops-tools/lono
+fi
+
+cd lono # will be in the cloned lono repo for the rest of the script
+
+if [ ! -L /tmp/lono/cli-docs/lono ] ; then
+  git pull || true
+  bundle
+fi
+bundle exec rake docs # generate cli docs
+
+# folder _reference
+rm -rf $DOCS/_reference*
+mv docs/_reference $DOCS/
+
+# file reference.md
+mv docs/reference.md $DOCS/reference.md
+
+# remove _includes to cleanup
+# docs/_includes/reference.md - just a generic reference.md left that is not needed
+rm -rf docs

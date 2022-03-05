@@ -5,19 +5,15 @@ reference: true
 
 ## Usage
 
-    lono new helper NAME --blueprint=BLUEPRINT
+    lono new helper SUBCOMMAND
 
 ## Description
 
-Generates new helper.
+helper subcommands
 
+## Subcommands
 
-## Options
+* [lono helper blueprint]({% link _reference/lono-helper-blueprint.md %}) - Generates new blueprint helper
+* [lono helper project]({% link _reference/lono-helper-project.md %}) - Generates new project helper
 
-```
-[--force]              # Bypass overwrite are you sure prompt for existing files
---blueprint=BLUEPRINT  # Blueprint name
-[--name=NAME]          # Helper name
-                       # Default: custom
-```
 

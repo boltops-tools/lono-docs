@@ -15,8 +15,7 @@ Generates new configset.
 ## Options
 
 ```
-[--demo], [--no-demo]  # Include demo template
-                       # Default: true
-[--force]              # Bypass overwrite are you sure prompt for existing files.
+[--examples], [--no-examples]  # Whether not to generate examples
+[--force]                      # Bypass overwrite are you sure prompt for existing files
 ```
 
