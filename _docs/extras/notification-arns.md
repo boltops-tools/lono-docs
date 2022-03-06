@@ -2,6 +2,7 @@
 title: Notification ARNs
 nav_text: Notification ARNs
 categories: extras
+order: 5
 ---
 
 You can specific notification arns for CloudFormation stack related events with a CLI option or in [config/app.rb]({% link _docs/config/app.md %}). Example:

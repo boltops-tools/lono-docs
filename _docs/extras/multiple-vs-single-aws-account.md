@@ -2,6 +2,7 @@
 title: Multiple vs Single Accounts
 nav_text: Multiple Accounts
 categories: extras
+order: 4
 ---
 
 There are 2 strategies for deploying your environments on AWS that are worth discussing.

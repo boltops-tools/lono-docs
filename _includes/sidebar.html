@@ -21,7 +21,7 @@
         <ul>
           {% assign docs = site.docs | where: "categories","vs" | sort: "order" %}
           {% for doc in docs -%}
-          <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+          <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -33,7 +33,7 @@
         <ul>
         {% assign docs = site.docs | where: "categories","intro" | sort:"order" %}
         {% for doc in docs -%}
-          <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+          <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
         {% endfor %}
         </ul>
       </li>
@@ -43,7 +43,7 @@
             <ul>
               {% assign docs = site.docs | where: "categories","gem" | sort:"order" %}
               {% for doc in docs -%}
-              <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endfor %}
             </ul>
           </li>
@@ -56,7 +56,7 @@
         <ul>
           {% assign docs = site.docs | where: "categories","blueprint" | sort:"order" %}
           {% for doc in docs -%}
-          <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+          <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -71,7 +71,7 @@
                 </ul>
               </li>
               {% else %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endif %}
             {% endfor %}
           </ul>
@@ -80,7 +80,7 @@
           <ul>
             {% assign docs = site.docs | where: "categories","generators" | sort: "order" %}
             {% for doc in docs -%}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
             {% endfor %}
           </ul>
       </li>
@@ -88,7 +88,7 @@
           <ul>
             {% assign docs = site.docs | where: "categories","layering" | sort: "order" %}
             {% for doc in docs -%}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
             {% endfor %}
           </ul>
       </li>
@@ -129,7 +129,7 @@
                 <ul>
                 {% assign builtin = site.docs | where: "categories","builtin-helpers" | sort: "order" %}
                 {% for doc in builtin -%}
-                  <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+                  <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
                 {% endfor %}
                 </ul>
               </li>
@@ -138,12 +138,12 @@
                 <ul>
                 {% assign builtin = site.docs | where: "categories","custom-helpers" | sort: "order" %}
                 {% for doc in builtin -%}
-                  <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+                  <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
                 {% endfor %}
                 </ul>
               </li>
               {% else %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endif %}
             {% endfor %}
           </ul>
@@ -156,7 +156,7 @@
             <ul>
               {% assign docs = site.docs | where: "categories","sources" | sort:"order" %}
               {% for doc in docs -%}
-              <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+              <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endfor %}
             </ul>
           <li><a href="{% link _docs/lonofile/version-locking.md %}">Version Locking</a></li>
@@ -169,14 +169,14 @@
             {% assign docs = site.docs | where: "categories","configsets" | sort: "order" %}
             {% for doc in docs -%}
               {% if doc.url == "/docs/configsets/configure/" %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
+              <li><a href='{{doc.url}}'>{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a>
                   <ul>
                       <li><a href='{% link _docs/configsets/configure/project.md %}'>Project</a></li>
                       <li><a href='{% link _docs/configsets/configure/blueprint.md %}'>Blueprint</a></li>
                   </ul>
               </li>
               {% elsif doc.url == "/docs/configsets/dsl/" %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
+              <li><a href='{{doc.url}}'>{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a>
                 <ul>
                   {% assign cs_dsl_docs = site.docs | where: "categories","configsets-dsl" | sort: "order" %}
                   {% for cs_doc in cs_dsl_docs -%}
@@ -185,7 +185,7 @@
                 </ul>
               </li>
               {% elsif doc.url == "/docs/configsets/helpers/" %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
+              <li><a href='{{doc.url}}'>{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a>
                   <ul>
                   {% assign cs_docs = site.docs | where: "categories","configsets-helpers" | sort: "order" %}
                   {% for cs_doc in cs_docs -%}
@@ -205,7 +205,7 @@
                   </ul>
               </li>
               {% elsif doc.url == "/docs/configsets/layering/" %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a>
+              <li><a href='{{doc.url}}'>{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a>
                 <ul>
                   {% assign cs_layering_docs = site.docs | where: "categories","configsets-layering" | sort: "order" %}
                   {% for cs_doc in cs_layering_docs -%}
@@ -214,16 +214,16 @@
                 </ul>
               </li>
               {% else %}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+              <li><a href='{{doc.url}}'>{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endif %}
             {% endfor %}
           </ul>
       </li>
-      <li>Extras
+      <li><a href="{% link _docs/extras.md %}">Extras</a>
           <ul>
             {% assign docs = site.docs | where: "categories","extras" | sort: "order" %}
             {% for doc in docs -%}
-              <li><a href='{{doc.url}}'>{{doc.nav_text}}</a></li>
+            <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
             {% endfor %}
           </ul>
       </li>

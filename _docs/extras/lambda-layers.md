@@ -2,6 +2,7 @@
 title: Lambda Layers
 nav_text: Lambda Layers
 categories: extras
+order: 2
 ---
 
 Lono supports building and uploading Ruby Gem Lambda Layers.  Here's an example Lambda function and Gemfile to demonstrate how lono helps with building Lambda layers.

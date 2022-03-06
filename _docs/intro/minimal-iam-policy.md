@@ -10,7 +10,7 @@ The IAM user you use to run the [lono up](/reference/lono-cfn-deploy/) command n
 Service | Description
 --- | ---
 CloudFormation | To create the CloudFormation stacks that then creates the the AWS resources that your creates.
-S3 | To create the lono managed s3 bucket. Lono uploads the generated CloudFormation template here. [App Files]({% link _docs/extras/app-files.md %}) are also uploaded here.
+S3 | To create the lono managed s3 bucket. Lono uploads the generated CloudFormation template here. [App Files]({% link _docs/extras/lono-files.md %}) are also uploaded here.
 
 However, it really depends on what your CloudFormation templates provision. If your templates provision an ec2 instance like the demo blueprint then you'd need EC2 also.
 
