@@ -5,9 +5,15 @@ categories: extras
 order: 2
 ---
 
-Lono supports building and uploading Ruby Gem Lambda Layers.  Here's an example Lambda function and Gemfile to demonstrate how lono helps with building Lambda layers.
+Lono can build and upload Lambda Layers.
 
-app/files/lambda-function/index.rb:
+## Lambda Layer Example
+
+Here's an example to demonstrate how lono can help build a Lambda Layer.
+
+First, here's a Lambda function in Ruby.
+
+app/blueprints/demo/files/lambda-function/index.rb:
 
 ```ruby
 def lambda_handler(event:, context:)
@@ -17,22 +23,24 @@ def lambda_handler(event:, context:)
 end
 ```
 
-app/files/lambda-function/Gemfile
+And a `Gemfile` with dependencies for the Lambda Layer.
+
+app/blueprints/demo/files/lambda-function/Gemfile
 
 ```ruby
 source "https://rubygems.org"
-gem "s3-secure" # just an example gem - Lambda Layer cannot be empty and requires at least one gem
+gem "s3-secure"# Example gem. Lambda Layer cannot be empty and requires at least one dependency.
 ```
 
-Then we'll create the Lambda function and layer.
+Next, we'll create a Lambda function and Lambda Layer.
 
-app/templates/demo.rb:
+app/blueprints/demo/template.rb
 
 ```ruby
 resource("Function", "AWS::Lambda::Function",
   Code: {
-    S3Bucket: s3_bucket,
-    S3Key: s3_key("lambda-function/"), # maps to app/files/lambda-function
+    S3Bucket: files_bucket,
+    S3Key: files("files/lambda-function"), # app/blueprints/demo/files/lambda-function
   },
   Description: "Lambda Function",
   Handler: "index.lambda_handler",
@@ -45,8 +53,8 @@ resource("Function", "AWS::Lambda::Function",
 resource("LayerVersion", "AWS::Lambda::LayerVersion",
   CompatibleRuntimes: ["ruby2.7"],
   Content: {
-    S3Bucket: s3_bucket,
-    S3Key: s3_key("lambda-function/", type: "lambda_layer", lang: "ruby") # type: "lambda_layer" results in autobuilding the layer using the Gemfile.lock
+    S3Bucket: files_bucket,
+    S3Key: files("files/lambda-function", layer: "ruby") # <= NOTE: layer: "ruby"
   },
   Description: "lambda layer",
   LayerName: "lambda-layer", # if not named, then it defaults to the logical id
@@ -54,29 +62,27 @@ resource("LayerVersion", "AWS::Lambda::LayerVersion",
 )
 ```
 
-We specify `s3_key("lambda-function/", type: "lambda_layer", lang: "ruby")` using the same folder where the `index.rb` Ruby code and `Gemfile` is located. This tells lono to use the Gemfile in that folder to build the Lambda Layer.
+The `layer: "ruby` option tells Lono to build and package up the files in `files/lambda-function` a Lambda Layer.
 
-IMPORANT: Make sure to run `bundle` in the `app/files/lambda-function` folder to generate an updated `Gemfile.lock` file.
+IMPORANT: Run `bundle` in the `app/blueprints/demo/files/lambda-function` folder to generate an updated `Gemfile.lock` file. Otherwise, you'll get an error complaining about missing dependencies when the Lambda function tries to run.  Lambda uses `Gemfile.lock`.
 
 ## Lambda Layers for Other Languages
 
-Lono currently does not automatically build Lambda Layers for other languages to the same degree of convenience as Ruby. For other languages, add the files directly to the `app/files` folder. Lono automatically uploads files in that directory so you can use it in a Lambda Layer. Example:
+Currently, Lono does not automatically build Lambda Layers for other languages to the same degree of convenience as Ruby. Will welcome and review PRs.
 
-app/templates/demo.rb:
+You have to add the files directly to the `app/blueprints/demo/files/lambda-function` folder for other languages. Lono uploads files in that folder. You will have to provide the dependency artifacts directly. Example:
+
+app/blueprints/demo/template.rb
 
 ```ruby
 resource("LayerVersion", "AWS::Lambda::LayerVersion",
   CompatibleRuntimes: ["python3.8"],
   Content: {
-    S3Bucket: s3_bucket,
-    S3Key: s3_key("python-layer/") # no type so it doesnt trigger the lambda layer autobuilding
+    S3Bucket: files_bucket,
+    S3Key: files("python-layer") # <= NOTE: no layer option pass
   },
   Description: "python layer",
   LayerName: "python-layer", # if not named, then it defaults to the logical id
   LicenseInfo: "Nonstandard"
 )
 ```
-
-You can add the lambda layer files in the `app/files/python-layer/` folder.
-
-
