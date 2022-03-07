@@ -78,4 +78,4 @@ plugins_dir:
 plugins:
 - jekyll-include-cache # Supported by GitHub pages
 
-ads_url: "https://ads.boltops.com"
+# ads_url: "https://ads.boltops.com"

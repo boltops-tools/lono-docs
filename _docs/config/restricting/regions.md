@@ -4,7 +4,7 @@ nav_text: Regions
 categories: restricting
 ---
 
-If you want to restrict which regions can be deployed, you can use:
+Restricting regions can help prevent accidental mistakes when switching AWS_PROFILE and deploying to region you don't wish to. If you want to restrict which regions can be deployed, you can use:
 
 config/app.rb
 

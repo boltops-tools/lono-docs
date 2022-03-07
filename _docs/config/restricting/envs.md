@@ -4,7 +4,7 @@ nav_text: Envs
 categories: restricting
 ---
 
-If you want to restrict environments that can be deployed, you can use:
+If you want to restrict environments that can be deployed, you can use the following. Restricting environments that can be deployed can prevent typo mistakes and accidentally creating resources for different LONO_ENVs.
 
 config/app.rb
 
