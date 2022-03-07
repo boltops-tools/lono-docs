@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Generates new configset.
+Generate new configset
 
 
 ## Options

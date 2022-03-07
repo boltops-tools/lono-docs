@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Generates new project.
+Generate new project
 
 ## Example
 

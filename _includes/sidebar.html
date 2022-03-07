@@ -70,6 +70,15 @@
                   <li><a href="{% link _docs/config/seed/authoring.md %}">Authoring</a>
                 </ul>
               </li>
+              {% elsif doc.url == "/docs/config/restricting/" %}
+              <li><a href="{% link _docs/config/restricting.md %}">Restricting</a>
+                <ul>
+                  {% assign docs = site.docs | where: "categories","restricting" | sort:"order" %}
+                  {% for doc in docs -%}
+                  <li><a href="{{ doc.url }}">{{ doc.nav_text }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
               {% else %}
               <li><a href="{{ doc.url }}">{% if doc.nav_text %}{{ doc.nav_text }}{% else %}{{ doc.title }}{% endif %}</a></li>
               {% endif %}

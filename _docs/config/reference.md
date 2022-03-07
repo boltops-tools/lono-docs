@@ -5,11 +5,9 @@ category: config
 order: 99
 ---
 
-Name | Description | Default
----|---|---
-logger | Logger object | Logger.new($stdout)
-logger.level | Logger level. Can also be set with `KUBES_LOG_LEVEL` env var | info
-names.stack | Pattern to use for the CloudFormation stack name. See: [Names Docs]({% link _docs/config/names.md %}) | :APP-:BLUEPRINT-:ENV
+{% include config/reference/header.md %}
+{% include config/reference/logging.md %}
+{% include config/reference/names.md %}
 plan.changeset | Whether or not to show a Change Set Diff when running `lono up`. Can be set to: true or false | true
 plan.params | Whether or not to show a Parameters Diff when running `lono up`. Can be set to: true or false. | true
 plan.template | Whether or not to show a Template Diff when running `lono up`. Can be set to: full, summary, or false. | summary

@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Deploy CloudFormation stack
+Deploy stack
 
 ## Examples
 

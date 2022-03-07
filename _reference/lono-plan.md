@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Plan or preview of the deploy
+Preview deploy
 
 
 ## Options

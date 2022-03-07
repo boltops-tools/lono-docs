@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-List blueprints, configsets, extensions, etc
+List blueprints
 
 
 ## Options

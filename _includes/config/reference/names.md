@@ -1,0 +1,2 @@
+names.stack | Pattern to use for the CloudFormation stack name. See: [Names Docs]({% link _docs/config/names.md %}) | :APP-:BLUEPRINT-:ENV
+names.output.stack | :BLUEPRINT-:ENV | Does not include APP by default. Think this is more common.

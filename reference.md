@@ -11,6 +11,7 @@ title: CLI Reference
 * [lono completion]({% link _reference/lono-completion.md %})
 * [lono completion_script]({% link _reference/lono-completion_script.md %})
 * [lono down]({% link _reference/lono-down.md %})
+* [lono iam]({% link _reference/lono-iam.md %})
 * [lono list]({% link _reference/lono-list.md %})
 * [lono new]({% link _reference/lono-new.md %})
 * [lono output]({% link _reference/lono-output.md %})

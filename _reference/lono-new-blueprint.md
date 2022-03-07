@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Generates new blueprint.
+Generate new blueprint
 
 
 ## Options

@@ -1,15 +1,15 @@
 ---
-title: lono down
+title: lono iam
 reference: true
 ---
 
 ## Usage
 
-    lono down BLUEPRINT
+    lono iam BLUEPRINT
 
 ## Description
 
-Delete stack
+Generate IAM policy
 
 ## Examples
 
@@ -26,11 +26,4 @@ Lono prompts you with an "Are you sure?" message before the stack gets deleted. 
     $
 
 
-## Options
-
-```
-    [--wait], [--no-wait]  # Wait for stack operation to complete.
-                           # Default: true
-y, [--yes], [--no-yes]     # Skip are you sure prompt
-```
 

@@ -9,7 +9,7 @@ reference: true
 
 ## Description
 
-Generates new shim.
+Generate new shim
 
 
 ## Options

@@ -23,8 +23,7 @@ Lono.configure do |config|
 end
 ```
 
-Lono expands the pattern and replaces it with actual values. 
-
+Lono expands the pattern and replaces it with actual values.
 
 ## LONO_APP
 
@@ -39,3 +38,7 @@ LONO_APP=app1 LONO_ENV=dev lono up demo | app1-demo-dev
 * Lono will clean the string from consecutive dashes. IE: `--` => `-`.  This allows `LONO_APP` to not be set.
 * Starting and trailing dashes will be removed to keep the stack name clean.
 * Underscores are replaced by dashes since only dashes are allowed in CloudFormation stack names.
+
+{% include config/reference/header.md %}
+{% include config/reference/names.md %}
+{% include config/reference/footer.md %}
