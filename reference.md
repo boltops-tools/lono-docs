@@ -7,7 +7,6 @@ title: CLI Reference
 * [lono bundle]({% link _reference/lono-bundle.md %})
 * [lono cfn]({% link _reference/lono-cfn.md %})
 * [lono clean]({% link _reference/lono-clean.md %})
-* [lono code]({% link _reference/lono-code.md %})
 * [lono completion]({% link _reference/lono-completion.md %})
 * [lono completion_script]({% link _reference/lono-completion_script.md %})
 * [lono down]({% link _reference/lono-down.md %})

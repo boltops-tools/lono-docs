@@ -2,12 +2,12 @@
 title: Custom Layering
 nav_text: Custom Layering
 category: layering
-order: 5
+order: 7
 ---
 
-If Lono built-in layering does not work for your needs, you can customize the way Layering is done.
+If Lono built-in layering does not work for your needs, you can customize layering.
 
-Custom layering is an advanced use-case. It is generally recommended to stick to the Lono conventions, which is already quite powerful and others won't have to learn the customization.
+Custom layering is an advanced use case. It is generally recommended to stick to the Lono conventions, which is already quite powerful, and others won't have to learn the customization.
 
 ## Structure
 
@@ -44,13 +44,13 @@ end
 ```
 ## Interface Methods
 
-There are 3 main interface methods designed to be overriden:
+There are 3 main interface methods designed to be overridden:
 
-1. **pre_layers**: Layers that get processed before the main layer. Defaults to an empty Array.
-2. **main_layers**: The main layers that get processed as described by the Lono docs. This includes the base and env layers as well as the layers provided by the specific cloud plugins. IE: AWS, Azure, GCP.
-3. **post_layers**: Layers that get processed after the main layer. Defaults to an empty Array.
+1. **pre_layers**: Layers processed before the main layer. Defaults to an empty Array.
+2. **main_layers**: The main layers processed as described by the Lono docs. This includes the base, env, region, and, account layers.
+3. **post_layers**: Layers processed after the main layer. Defaults to an empty Array.
 
-You can chose the methods to override.
+You can choose the methods to override.
 
 ## Example
 
@@ -70,7 +70,7 @@ end
 
 The `pre_layer` adds a layer using the `TEAM` env var. For example:
 
-config/blueprints/demo/params/teams/backend.txt
+config/blueprints/demo/params/teams/backend.env
 
     team_scoped_config="team_scoped_config_value"
 

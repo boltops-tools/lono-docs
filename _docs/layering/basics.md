@@ -12,26 +12,21 @@ Layering generally works the same for params and variables files. They use diffe
     config/blueprints/demo/params
     config/blueprints/demo/vars
 
-Params have a `.txt` extension and vars have a `.rb` extension. We'll show a params example to cover the basics of layering.
+Params have a `.env` extension, and vars have a `.rb` extension. We'll show a params example to cover the basics of layering.
 
     config/blueprints/demo/params
-    ├── base.txt
-    ├── dev.txt
-    └── prod.txt
+    ├── base.env
+    ├── dev.env
+    └── prod.env
 
-* `base.txt` is always evaluated.
-* `dev.txt` or `prod.txt` is evaluated based on `LONO_ENV`.
+* `base.env` is always evaluated.
+* `dev.env` or `prod.env` is evaluated based on `LONO_ENV`.
 
-In this case, you want to define your base params used for templates in the `base.txt` and overrides in `prod.txt`.
+In this case, you want to define your base params used for templates in the `base.env` and overrides in `prod.env`.
 
-## Top-Level Folders: app vs config
+The basic example above shows layering with the top-level `config` folder.  You can also define layers within the blueprint.
 
-The basics example above shows layering with the top-level `config` folder.  You can also define your params and vars in the top-level `app` folder. Here's an example of the different paths:
-
-    app/blueprints/demo/config/params - processed first
-    config/blueprints/demo/params - processed later and takes higher precedence
-
-Generally, it's recommended to set your custom params and vars in the top-level `config` folder. The blueprint will define defaults in the `app/blueprints/demo` folder.
+{% include layering/separate-layers.md %}
 
 ## More
 

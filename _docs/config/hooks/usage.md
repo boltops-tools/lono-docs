@@ -11,9 +11,9 @@ You can use hooks to run scripts at specific steps of the Lono lifecycle.
 
 Hook | Description
 ---|---
-build | When Lono builds or compiles the Lono project to the `.lono-cache` folder.
-down | When Lono destroys the stack.
-up | When Lono creates or updates the stack.
+build | When Lono builds the blueprint.
+down | When Lono deletes the stack.
+up | When Lono deploys the stack.
 
 {% include config/hooks/generator.md %}
 

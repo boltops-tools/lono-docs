@@ -1,7 +1,6 @@
 ---
 title: Lambda Layers
-nav_text: Lambda Layers
-categories: extras
+categories: more
 order: 2
 ---
 

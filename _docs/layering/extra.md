@@ -1,35 +1,27 @@
 ---
-title: Full Layering
-nav_text: Full Layering
+title: Extra Layering
+nav_text: Extra Layering
 category: layering
-order: 4
+order: 6
 ---
 
-The [Basic layering]({% link _docs/layering/basics.md %}) docs focuses on providing a gentle introduction to layering. This document covers layering in more detail.
+If you're setting the `LONO_EXTRA` env var to leverage the Lono.extra feature, it also activate an extra layer.
 
-## Stick to a Few
+## Example
 
-Since layering is so powerful, you want to choose a few layers that make sense for your team and stick to them. Here's an example:
+    export LONO_EXTRA=2
 
 Vars
 
     config/blueprints/demo/vars/base.rb
     config/blueprints/demo/vars/dev.rb
+    config/blueprints/demo/vars/dev-2.rb    <= extra layer
 
 Params
 
     config/blueprints/demo/params/base.env
     config/blueprints/demo/params/dev.env
-
-Shown as a tree:
-
-    config/blueprints/demo
-    ├── params
-    │   ├── base.env
-    │   └── dev.env
-    └── vars
-        ├── base.rb
-        └── dev.rb
+    config/blueprints/demo/params/dev-2.env <= extra layer
 
 ## Seeing Layers Clearly
 
@@ -39,10 +31,12 @@ Shown as a tree:
     Building template
         config/blueprints/demo/vars/base.rb
         config/blueprints/demo/vars/dev.rb
+        config/blueprints/demo/vars/dev-2.rb
         output/demo/template.yml
     Building parameters
         config/blueprints/demo/params/base.env
         config/blueprints/demo/params/dev.env
+        config/blueprints/demo/params/dev-2.env
         output/demo/params.json
 
 {% include layering/found-layers-note.md %}

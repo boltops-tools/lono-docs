@@ -1,5 +1,7 @@
 ---
 title: Articles
+categories: more
+order: 7
 ---
 
 ## Articles On Lono and CloudFormation

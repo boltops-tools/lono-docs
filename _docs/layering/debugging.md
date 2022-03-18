@@ -2,95 +2,91 @@
 title: Layering Debugging Tips
 nav_text: Debugging
 category: layering
-order: 99
+order: 88
 ---
 
-Lono's Layering abilities are so powerful that they can be difficult to debug when overly used like a russian doll.  It is recommend you chose only a few layers that make sense for your goals and stick to them. Essentially, limit the rope length. Here are also some debugging tips.
+Lono layering is a powerful ability. While some folks love layering, some dislike it. Think this is because layers are so powerful that they can get complex, especially when abused. It's up to the welder of the sword. This doc tries to help you debug layering, even when abused. 🤣
 
-## Enable Logging
+## Seeing Layers Clearly
 
-You can debug layers by turning on logging to debug to see them.
+Probably the best tip is to configure `config.layering.show` so you can see the layers.
 
 config/app.rb
 
 ```ruby
 Lono.configure do |config|
-  config.logger.level = "debug"
+  config.layering.show = true
 end
 ```
 
-This will show the **found** layers.
+This will show the **found** layers. Example:
 
     $ lono build demo
-    Vars Layers:
-        config/blueprints/demo/vars/base.rb
-        config/blueprints/demo/vars/dev.rb
     Params Layers:
-        config/blueprints/demo/params/base.txt
-        config/blueprints/demo/params/dev.txt
+        config/blueprints/demo/params/base.env
+        config/blueprints/demo/params/dev.env
 
-Note: This will turn on debugging for configset layering also. See: [Configsets Layering Debugging]({% link _docs/configsets/layering/debugging.md %}).
+## All Layering
 
-## All Considered Layers
+To see all the **possible** layers is to set `LONO_LAYERS_ALL=1`.
 
-If you want to also see all the considered layers use `LONO_SHOW_ALL_LAYERS=1`. Remember, `config.logger.level = "debug"` needs to also be configured.
+    export LONO_LAYERS_ALL=1
 
-    $ export LONO_SHOW_ALL_LAYERS=1
-    $ lono build demo
-    Vars Layers:
-        app/blueprints/demo/config/vars.rb
-        app/blueprints/demo/config/vars/base.rb
-        app/blueprints/demo/config/vars/dev.rb
-        app/blueprints/demo/config/vars/us-west-2.rb
-        app/blueprints/demo/config/vars/us-west-2/base.rb
-        app/blueprints/demo/config/vars/us-west-2/dev.rb
-        app/blueprints/demo/config/vars/111111111111.rb
-        app/blueprints/demo/config/vars/111111111111/base.rb
-        app/blueprints/demo/config/vars/111111111111/dev.rb
-        app/blueprints/demo/config/vars/111111111111/us-west-2.rb
-        app/blueprints/demo/config/vars/111111111111/us-west-2/base.rb
-        app/blueprints/demo/config/vars/111111111111/us-west-2/dev.rb
-        config/blueprints/demo/vars.rb
-        config/blueprints/demo/vars/base.rb
-        config/blueprints/demo/vars/dev.rb
-        config/blueprints/demo/vars/us-west-2.rb
-        config/blueprints/demo/vars/us-west-2/base.rb
-        config/blueprints/demo/vars/us-west-2/dev.rb
-        config/blueprints/demo/vars/111111111111.rb
-        config/blueprints/demo/vars/111111111111/base.rb
-        config/blueprints/demo/vars/111111111111/dev.rb
-        config/blueprints/demo/vars/111111111111/us-west-2.rb
-        config/blueprints/demo/vars/111111111111/us-west-2/base.rb
-        config/blueprints/demo/vars/111111111111/us-west-2/dev.rb
-    Params Layers:
-        app/blueprints/demo/config/params.txt
-        app/blueprints/demo/config/params/base.txt
-        app/blueprints/demo/config/params/dev.txt
-        app/blueprints/demo/config/params/us-west-2.txt
-        app/blueprints/demo/config/params/us-west-2/base.txt
-        app/blueprints/demo/config/params/us-west-2/dev.txt
-        app/blueprints/demo/config/params/111111111111.txt
-        app/blueprints/demo/config/params/111111111111/base.txt
-        app/blueprints/demo/config/params/111111111111/dev.txt
-        app/blueprints/demo/config/params/111111111111/us-west-2.txt
-        app/blueprints/demo/config/params/111111111111/us-west-2/base.txt
-        app/blueprints/demo/config/params/111111111111/us-west-2/dev.txt
-        config/blueprints/demo/params.txt
-        config/blueprints/demo/params/base.txt
-        config/blueprints/demo/params/dev.txt
-        config/blueprints/demo/params/us-west-2.txt
-        config/blueprints/demo/params/us-west-2/base.txt
-        config/blueprints/demo/params/us-west-2/dev.txt
-        config/blueprints/demo/params/111111111111.txt
-        config/blueprints/demo/params/111111111111/base.txt
-        config/blueprints/demo/params/111111111111/dev.txt
-        config/blueprints/demo/params/111111111111/us-west-2.txt
-        config/blueprints/demo/params/111111111111/us-west-2/base.txt
-        config/blueprints/demo/params/111111111111/us-west-2/dev.txt
+There are many layers, so we'll only show the params one.
+
+    app/blueprints/demo/config/params.env
+    app/blueprints/demo/config/params/base.env
+    app/blueprints/demo/config/params/dev.env
+    app/blueprints/demo/config/params/us-west-2.env
+    app/blueprints/demo/config/params/base/us-west-2.env
+    app/blueprints/demo/config/params/dev/us-west-2.env
+    app/blueprints/demo/config/params/111111111111.env
+    app/blueprints/demo/config/params/base/111111111111.env
+    app/blueprints/demo/config/params/dev/111111111111.env
+    app/blueprints/demo/config/params/111111111111/us-west-2.env
+    app/blueprints/demo/config/params/base/111111111111/us-west-2.env
+    app/blueprints/demo/config/params/dev/111111111111/us-west-2.env
+    config/blueprints/demo/params.env
+    config/blueprints/demo/params/base.env
+    config/blueprints/demo/params/dev.env
+    config/blueprints/demo/params/us-west-2.env
+    config/blueprints/demo/params/base/us-west-2.env
+    config/blueprints/demo/params/dev/us-west-2.env
+    config/blueprints/demo/params/111111111111.env
+    config/blueprints/demo/params/base/111111111111.env
+    config/blueprints/demo/params/dev/111111111111.env
+    config/blueprints/demo/params/111111111111/us-west-2.env
+    config/blueprints/demo/params/base/111111111111/us-west-2.env
+    config/blueprints/demo/params/dev/111111111111/us-west-2.env
+
+As you can see, layering can be pretty powerful but also complex.
+
+{% include layering/separate-layers.md %}
+
+## Simple Layering Mode
+
+If you do not need to use multiple regions or accounts layers, you can use simple layering mode.
+
+config/app.rb
+
+```ruby
+Lono.configure do |config|
+  config.layering.mode = "simple"
+end
+```
+
+It'll look like this.
+
+    app/blueprints/demo/config/params.env
+    app/blueprints/demo/config/params/base.env
+    app/blueprints/demo/config/params/dev.env
+    config/blueprints/demo/params.env
+    config/blueprints/demo/params/base.env
+    config/blueprints/demo/params/dev.env
 
 ## Useful With
 
-Debugging layers with these flags can be particularly useful when using:
+Showing layers to debug them is particularly useful when using:
 
+* [App Layering]({% link _docs/layering/app.md %})
 * [Custom Layering]({% link _docs/layering/custom.md %})
-* [App-Scoped Layers]({% link _docs/layering/full.md %}#full-layering-with-lono_app)

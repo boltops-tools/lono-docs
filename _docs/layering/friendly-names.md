@@ -2,7 +2,7 @@
 title: Friendly Names
 nav_text: Friendly Names
 category: layering
-order: 6
+order: 8
 ---
 
 You can configure a `layering.names` map to assign friendly names to the layer name.  Currently, `account` is supported. Example setup:
@@ -18,10 +18,10 @@ Lono.configure do |config|
 end
 ```
 
-This maps the `111111111111` account to a friendly  name `dev-account`. So when you build or deploy it'll use the friendly name. Example:
+This maps the `111111111111` account to a friendly name `dev-account`. When you build or deploy, it'll use the friendly name. Example:
 
     $ ls config/blueprints/demo/params/dev-account
-    base.txt
+    base.env
     $ lono build demo
 
 Without the mapping, the paths would look like so:

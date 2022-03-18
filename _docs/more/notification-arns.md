@@ -1,7 +1,6 @@
 ---
 title: Notification ARNs
-nav_text: Notification ARNs
-categories: extras
+categories: more
 order: 5
 ---
 

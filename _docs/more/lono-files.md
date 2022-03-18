@@ -1,7 +1,7 @@
 ---
 title: Lono Uploaded Files
 nav_text: Uploaded Files
-categories: extras
+categories: more
 order: 1
 ---
 

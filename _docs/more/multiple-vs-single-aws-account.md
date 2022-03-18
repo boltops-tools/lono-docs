@@ -1,7 +1,7 @@
 ---
 title: Multiple vs Single Accounts
 nav_text: Multiple Accounts
-categories: extras
+categories: more
 order: 4
 ---
 
@@ -30,40 +30,6 @@ The benefit is that you don't have to remember to switch `AWS_PROFILE`.
 
 The drawbracks is less isolation between the environments. You must be more careful to achieve isolation with AWS features like IAM policies, security groups, etc.
 
-## Lono Flexibility
+## Thoughts
 
-Lono easily supports either approach. Lono even has an [aws_profile setting](https://lono.cloud/docs/configuration/settings/) so you don't forget to also set `LONO_ENV` when switching between AWS accounts.  Example:
-
-config/settings.yml:
-
-```ruby
-dev:
-  aws_profile: dev_profile
-
-prod:
-  aws_profile: prod_profile
-```
-
-When switch `AWS_PROFILE=prod_profile`, then `LONO_ENV=prod` will also automatically be applied. By configuring the `config/settings.yml`, you don't have to remember to specify it.
-
-### Multiple Accounts Example
-
-In a multiple-accounts setup, commands become very short and pretty.
-
-    export AWS_PROFILE=dev_profile
-    lono up vpc # deploy VPC to dev AWS account
-    export AWS_PROFILE=prod_profile
-    lono up vpc # deploy VPC to prod AWS account
-
-### Single Account Example
-
-In a single-account setup, the commands become slightly longer. You must specify different stack names. Also, you'll have to remember to specify `LONO_ENV=prod` for non-dev environments.
-
-    unset LONO_ENV # default is LONO_ENV=dev
-    lono up vpc-dev --blueprint vpc
-    export LONO_ENV=prod
-    lono up vpc-prod  --blueprint vpc
-
-Generally, the multiple-account approach is the recommended approach.
-
-
+Generally, the multiple-account approach is the recommended approach sense it provides such a huge security benefit.
