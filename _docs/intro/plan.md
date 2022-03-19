@@ -27,7 +27,7 @@ Lono runs a "plan" that provides a preview of what will be deployed by showing t
         GroupDescription: desc 1 -> desc 2
 
     Change Set Diff:
-    Determining Change Set.......
+    Calculating Change Set.......
         Modify AWS::EC2::SecurityGroup: SecurityGroup demo-dev-SecurityGroup-10RCAAYLFSKT6
     Changes to outputs
     Added:

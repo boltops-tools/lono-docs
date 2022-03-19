@@ -20,7 +20,7 @@ Lono will show you a preview of the changes and prompt you to update the infrast
         AccessControl: Private -> PublicRead
 
     Change Set Changes:
-    Determining Change Set......
+    Calculating Change Set......
     Resource Changes
         Modify AWS::S3::Bucket: Bucket demo-dev-bucket-1p4y43txdk9zg
 

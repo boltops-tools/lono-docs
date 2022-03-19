@@ -26,7 +26,7 @@ app/blueprints/demo/template.rb
 ```ruby
 resource("Function", "AWS::Lambda::Function",
   Code: {
-    S3Bucket: files_bucket,
+    S3Bucket: files_bucket, # same as lono bucket
     S3Key: files("files/index.rb"), # use files/index.rb
   },
   Handler: "index.lambda_handler",
