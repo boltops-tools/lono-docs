@@ -14,8 +14,8 @@ Here's an example config structure:
     config/blueprints
     └── demo
         └── params
-            ├── dev.txt
-            └── prod.txt
+            ├── dev.env
+            └── prod.env
 
 Notice how there are different `dev` and `prod` config files. This structure allows you to create different environments with the same CloudFormation template.  Learn more: [Layering]({% link _docs/layering.md %}).
 

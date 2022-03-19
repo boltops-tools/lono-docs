@@ -17,8 +17,8 @@ Here's an example project structure.
     │   └── blueprints
     │       └── demo
     │           ├── params
-    │           │   ├── dev.txt
-    │           │   └── prod.txt
+    │           │   ├── dev.env
+    │           │   └── prod.env
     │           └── vars
     │               ├── dev.rb
     │               └── prod.rb

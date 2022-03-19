@@ -14,14 +14,14 @@ The `config` files are located at `config/blueprints/BLUEPRINT/params`.  Example
     config/blueprints
     └── demo
         └── params
-            ├── dev.txt
-            └── prod.txt
+            ├── dev.env
+            └── prod.env
 
 ## Examples
 
 Lono allows you to set parameters in a simple `KEY=VALUE` format commonly found in env files.  This format is less prone to human error than the AWS more verbose parameter file format.  When [lono build](/reference/lono-build/) runs it processes the files in `config/blueprints/BLUEPRINT/params` folders and outputs the AWS JSON format file in `output/BLUEPRINT/params` folder.  Here's an example:
 
-config/blueprints/demo/params/dev.txt
+config/blueprints/demo/params/dev.env
 
     KeyName=default
     InstanceType=t2.micro
@@ -47,7 +47,7 @@ These files can directly be used to launch the CloudFormation stack with the `aw
 
 Parameters files support ERB evaluation.  This allows you to  use the [ssm helper method](https://github.com/boltops-tools/lono/blob/master/lib/lono/template/context/helpers.rb) to substitute secrets from SSM parameter store.  This avoids committing secret information to your repo. Example:
 
-config/blueprints/demo/params/dev.txt
+config/blueprints/demo/params/dev.env
 
     KeyName=<%= ssm("/#{Lono.env}/key_name") %>
     InstanceType=t2.micro

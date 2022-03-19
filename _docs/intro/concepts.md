@@ -26,7 +26,7 @@ Docs: [Blueprints]({% link _docs/blueprints.md %})
 
 CloudFormation parameters allow you to create different environments with the same template code. Lono params simplify this process by providing an env-like file syntax. Here's an example:
 
-config/blueprints/demo/params/dev.txt:
+config/blueprints/demo/params/dev.env:
 
     KeyName=default
     InstanceType=t2.micro
@@ -37,7 +37,7 @@ Docs: [Params]({% link _docs/config/params.md %})
 
 Lono Variables allow you to compile down different templates when run-time [params]({% link _docs/config/params.md %}) do not suffice. This allows doing things that are outside of the ability of CloudFormation run-time parameters. Here's an example:
 
-config/blueprints/demo/vars/dev.txt:
+config/blueprints/demo/vars/dev.env:
 
 ```ruby
 @desc = "Template description"
@@ -50,8 +50,8 @@ Docs: [Variables]({% link _docs/config/variables.md %})
 Lono supports a concept called Layering.  Layering allows you to build both prod and dev environments with the same template code. Here's an simple example of layering:
 
     config/blueprints/demo/params
-    ├── dev.txt
-    └── prod.txt
+    ├── dev.env
+    └── prod.env
 
 Docs: [Layering]({% link _docs/layering.md %})
 

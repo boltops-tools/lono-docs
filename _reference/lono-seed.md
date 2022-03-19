@@ -15,14 +15,14 @@ Builds starter configs for a blueprint.
 
     $ lono seed demo
     Creating starter config files for ec2
-          create  config/blueprints/ec2/params/dev.txt
+          create  config/blueprints/ec2/params/dev.env
           create  config/blueprints/ec2/vars/dev.rb
 
 To create the files in the top-level app folder
 
     $ lono seed ec2 --where app
     Creating starter config files for ec2
-          create  app/blueprints/ec2/config/params/dev.txt
+          create  app/blueprints/ec2/config/params/dev.env
           create  app/blueprints/ec2/config/vars/dev.rb
     $
 

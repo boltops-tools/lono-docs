@@ -88,12 +88,12 @@ The [lono seed]({% link _docs/config/seed.md %}) command also uses the informati
     Creating starter config files for demo
     Building CloudFormation templates for blueprint demo:
       output/demo/templates/demo.yml
-          create  config/blueprints/demo/params/dev.txt
+          create  config/blueprints/demo/params/dev.env
     $
 
 Here's the contents of the params file.
 
-config/blueprints/demo/params/dev.txt:
+config/blueprints/demo/params/dev.env:
 
     # Parameter Group: EC2 Instance Settings
     # InstanceType=t3.micro

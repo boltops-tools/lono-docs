@@ -2,7 +2,7 @@
 
 Params and variables follow the same lookup strategy. So it makes sense to have them located in a similar structure. Example:
 
-    config/demo/params/dev/my-stack.txt
+    config/demo/params/dev/my-stack.env
     config/demo/variables/dev/my-stack.rb
 
 The deploy command would be:

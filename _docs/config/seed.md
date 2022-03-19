@@ -19,10 +19,10 @@ The general form is:
 ## Examples
 
     $ lono seed vpc
-          create  config/blueprints/vpc/params/dev.txt
+          create  config/blueprints/vpc/params/dev.env
           create  config/blueprints/vpc/vars/dev.rb
 
-config/blueprints/vpc/params/dev.txt
+config/blueprints/vpc/params/dev.env
 
     DomainName=dev.local # (required)
     VpcName=dev-vpc # (required)
@@ -42,7 +42,7 @@ config/blueprints/vpc/vars/dev.rb
 To create starter tfvars file for a different environment, use `LONO_ENV`. Example:
 
     $ LONO_ENV=prod lono seed vpc
-          create  config/blueprints/vpc/params/prod.txt
+          create  config/blueprints/vpc/params/prod.env
           create  config/blueprints/vpc/vars/prod.rb
 
 ## Where Option
@@ -50,13 +50,13 @@ To create starter tfvars file for a different environment, use `LONO_ENV`. Examp
 By default, the `seed` command generates starter config files to the `config/blueprints` folder. IE:
 
     $ lono seed vpc
-          create  config/blueprints/vpc/params/dev.txt
+          create  config/blueprints/vpc/params/dev.env
           create  config/blueprints/vpc/vars/dev.rb
 
 You can adjust this behavior by using the `--where` option. Example:
 
     $ lono seed vpc --where app
-          create  app/blueprints/vpc/config/params/dev.txt
+          create  app/blueprints/vpc/config/params/dev.env
           create  app/blueprints/vpc/config/vars/dev.rb
 
 Thanks to layering, either location works. For more details refer to [Full Layering Docs]({% link _docs/layering/full.md %}).

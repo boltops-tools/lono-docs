@@ -28,19 +28,19 @@ Lono can also generate starter params files for us with the `lono seed` command.
 
     $ lono seed demo
     Creating starter config files for demo
-          create  config/blueprints/demo/params/dev.txt
+          create  config/blueprints/demo/params/dev.env
     $
 
 This produces:
 
-config/blueprints/demo/params/dev.txt
+config/blueprints/demo/params/dev.env
 
     # AccessControl=Private
     # BucketName=
 
 Lono uses the information from `output/demo/template.yml` to generate the starter params file.  It detected that all the parameters are optional, adds them with a leading comment.  We'll uncomment `AccessControl` and change it to `AccessControl=PublicRead`.
 
-config/blueprints/demo/params/dev.txt
+config/blueprints/demo/params/dev.env
 
     AccessControl=PublicRead
     # BucketName=

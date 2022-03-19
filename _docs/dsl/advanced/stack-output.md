@@ -18,7 +18,7 @@ Then you would like to launch another stack that has a `VpcId` parameter. You ca
 
 Example:
 
-config/blueprints/demo/params/dev.txt:
+config/blueprints/demo/params/dev.env:
 
     VpcId=<%= output("vpc.VpcId") %>
 
@@ -30,7 +30,7 @@ The helpers are also documented in [Built-In Helpers]({% link _docs/helpers/buil
 
 You can also use `stack_output` instead of `output`. Within the params context, `output` is aliased to `stack_output`.
 
-config/blueprints/demo/params/dev.txt:
+config/blueprints/demo/params/dev.env:
 
     VpcId=<%= stack_output("vpc.VpcId") %>
 
@@ -57,7 +57,7 @@ If you're wondering why `LONO_APP` is not in the default. It's usually more comm
 
 Additionally, if you just need to override it for a specific parameter. Just pass in the pattern directly. When a `:` is in the passed value, lono will use it for expansion. Example:
 
-config/blueprints/demo/params/base.txt:
+config/blueprints/demo/params/base.env:
 
     VpcId=<%= output("vpc-:ENV.VpcId") %> # another way to override the default expansion pattern
     # When LONO_ENV=dev the above is the same as
