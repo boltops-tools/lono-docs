@@ -10,8 +10,6 @@ For minor changes like typos, you can click **Suggest an edit to this page**, lo
 
 For larger fixes, you can run the site locally with the following:
 
-```
-gem install lono
-```
+    gem install lono
 
 You'll be able to view the site on [http://localhost:4000](http://localhost:4000).
