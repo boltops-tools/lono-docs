@@ -33,7 +33,7 @@ Or you can create a "standard" app blueprint and then override configurations wi
     LONO_APP=1 lono up app
     LONO_APP=2 lono up app
 
-This is useful when using the [Central Deployment Pattern]({% link _docs/patterns/central-deploy.md %}). It's a way to **standardize** app-focused CloudFormation infrastructure resources. The same blueprint is used. It's DRY. Of course, if an app strays too far away from the "standard" blueprint code, it may make sense to create a new dedicated blueprint.
+Essentially, the **same** blueprint is reuse for multiple apps. It's DRY. However, if an app strays too far away from the "standard" blueprint code, it may make sense to create a new dedicated blueprint.
 
 ## Stick to a Few
 

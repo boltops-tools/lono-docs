@@ -1,1 +1,1 @@
-names.stack | Pattern to use for the CloudFormation stack name. See: [Names Docs]({% link _docs/config/names.md %}) | :APP-:BLUEPRINT-:ENV-:EXTRA
+names.stack | Pattern to use for the CloudFormation stack name. See: [Names Docs]({% link _docs/config/names.md %}) | :APP-:ROLE-:BLUEPRINT-:ENV-:EXTRA
