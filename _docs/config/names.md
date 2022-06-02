@@ -19,7 +19,7 @@ config/app.rb
 
 ```Ruby
 Lono.configure do |config|
-  config.names.stack = ":APP-:BLUEPRINT-:ENV"
+  config.names.stack = ":APP-:ROLE-:BLUEPRINT-:ENV"
 end
 ```
 
